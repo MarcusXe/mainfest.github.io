@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="存储过程(SP)存储过程和函数也是一种PL/SQL块，是存入数据库的PL/SQL块。   但存储过程和函数不同于已经介绍过的PL/SQL程序，我们通常把 PL/SQL程序称为无名（匿名）块，而存储过程和函数是以命名的 方式存储于数据库中的。   其优点如下： 简化输入，可以重复执行  存储过程在服务器端运行，执行速度快 确保数据库的安全性,只有被授权的用户或创建者本身才能执行存 储过程  1. 创">
+<meta property="og:type" content="article">
+<meta property="og:title" content="存储过程(SP)">
+<meta property="og:url" content="http://yoursite.com/2019/05/09/存储过程-SP/index.html">
+<meta property="og:site_name" content="Xeby">
+<meta property="og:description" content="存储过程(SP)存储过程和函数也是一种PL/SQL块，是存入数据库的PL/SQL块。   但存储过程和函数不同于已经介绍过的PL/SQL程序，我们通常把 PL/SQL程序称为无名（匿名）块，而存储过程和函数是以命名的 方式存储于数据库中的。   其优点如下： 简化输入，可以重复执行  存储过程在服务器端运行，执行速度快 确保数据库的安全性,只有被授权的用户或创建者本身才能执行存 储过程  1. 创">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-05-09T14:09:20.599Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="存储过程(SP)">
+<meta name="twitter:description" content="存储过程(SP)存储过程和函数也是一种PL/SQL块，是存入数据库的PL/SQL块。   但存储过程和函数不同于已经介绍过的PL/SQL程序，我们通常把 PL/SQL程序称为无名（匿名）块，而存储过程和函数是以命名的 方式存储于数据库中的。   其优点如下： 简化输入，可以重复执行  存储过程在服务器端运行，执行速度快 确保数据库的安全性,只有被授权的用户或创建者本身才能执行存 储过程  1. 创">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://yoursite.com/2019/05/09/存储过程-SP/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>存储过程(SP) | Xeby</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Xeby</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">总之岁月漫长,然而值得等待.</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/09/存储过程-SP/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Glitch">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xeby">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">存储过程(SP)
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-05-09 22:08:58 / 修改时间：22:09:20" itemprop="dateCreated datePublished" datetime="2019-05-09T22:08:58+08:00">2019-05-09</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="存储过程-SP"><a href="#存储过程-SP" class="headerlink" title="存储过程(SP)"></a>存储过程(SP)</h1><p>存储过程和函数也是一种PL/SQL块，是存入数据库的PL/SQL块。 </p>
+<ul>
+<li>但存储过程和函数不同于已经介绍过的PL/SQL程序，我们通常把 PL/SQL程序称为无名（匿名）块，而存储过程和函数是以命名的 方式存储于数据库中的。 </li>
+</ul>
+<h3 id="其优点如下："><a href="#其优点如下：" class="headerlink" title="其优点如下："></a>其优点如下：</h3><ol>
+<li>简化输入，可以重复执行 </li>
+<li>存储过程在服务器端运行，执行速度快</li>
+<li>确保数据库的安全性,只有被授权的用户或创建者本身才能执行存 储过程</li>
+</ol>
+<h3 id="1-创建存储过程"><a href="#1-创建存储过程" class="headerlink" title="1. 创建存储过程"></a>1. 创建存储过程</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">create [or replace] procedure &lt;过程名&gt; (参数 [in|out|in out] 数据类型，…） is/as </span><br><span class="line">[declare 变量声明;] </span><br><span class="line">begin 执行语句; </span><br><span class="line">[exception  异常处理部分]  </span><br><span class="line">end;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>in表示参数是输入给过程的；</li>
+<li>out表示参数需要在存储过程执行后返回给调用环境一个值；</li>
+<li>in out表示在过程调用时必须给定的并且在执行后返回给调用环境的参</li>
+</ul>
+<h3 id="2-执行存储过程"><a href="#2-执行存储过程" class="headerlink" title="2. 执行存储过程"></a>2. 执行存储过程</h3><ul>
+<li><p>方法1：</p>
+<p>EXECUTE 模式名.存储过程名[(参数1,…)];</p>
+<p>模式名即方案名，也就是这个存储过程是属于哪个方案。</p>
+</li>
+<li><p>方法2： </p>
+<p>BEGIN </p>
+<p>​    模式名.存储过程名[(参数1,…)]; </p>
+<p>END;<br>用一个匿名的PL/SQL块来执行存储过程。</p>
+</li>
+<li><p><em>当含有out型参数时只能使用pl_sql块来实现(在pl_sql块中可以定义变量,作为缓冲区接收回传参数).只含有in类型参数时可以采用excute语句.</em></p>
+</li>
+</ul>
+<h3 id="3-EX"><a href="#3-EX" class="headerlink" title="3. EX"></a>3. EX</h3><ol>
+<li><p>定义</p>
+<ul>
+<li>根据学号和课程号查询学生的成绩信息。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">CREATE OR REPLACE PROCEDURE PRO_SELGRADE </span><br><span class="line">(stuno in xs.sno%type,stucno in kc.cno%type, stugrade out cj.grade%type) </span><br><span class="line">is</span><br><span class="line">BEGIN </span><br><span class="line">    select grade into stugrade  </span><br><span class="line">    from cj </span><br><span class="line">    where </span><br><span class="line">    sno=stuno and cno=stucno; </span><br><span class="line">    exception </span><br><span class="line">    when no_data_found then dbms_output.put_line(&apos;数据没找到&apos;); </span><br><span class="line">    when others then dbms_output.put_line(&apos;产生异常&apos;); </span><br><span class="line">END;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>调用</p>
+<p>查询学号为001221学生的101号课程的成绩信息。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">DECLARE grade cj.grade%type; </span><br><span class="line">BEGIN </span><br><span class="line">	pro_selgrade(&apos;001221&apos;,&apos;101&apos;,grade); </span><br><span class="line">	dbms_output.put_line(grade);</span><br><span class="line">END;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/05/09/序列-Sequence/" rel="next" title="序列(Sequence)">
+                <i class="fa fa-chevron-left"></i> 序列(Sequence)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/05/09/同义词-Synonym/" rel="prev" title="同义词(Synonym)">
+                同义词(Synonym) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Glitch</p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#存储过程-SP"><span class="nav-number">1.</span> <span class="nav-text">存储过程(SP)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#其优点如下："><span class="nav-number">1.0.1.</span> <span class="nav-text">其优点如下：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-创建存储过程"><span class="nav-number">1.0.2.</span> <span class="nav-text">1. 创建存储过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-执行存储过程"><span class="nav-number">1.0.3.</span> <span class="nav-text">2. 执行存储过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-EX"><span class="nav-number">1.0.4.</span> <span class="nav-text">3. EX</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Glitch</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.1.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/schemes/muse.js?v=7.1.1"></script>
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
