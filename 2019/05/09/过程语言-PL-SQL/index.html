@@ -14,7 +14,7 @@
   
 
 
-<html class="theme-next mist use-motion" lang="zh-CN">
+<html class="theme-next pisces use-motion" lang="zh-CN">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -70,7 +70,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Mist',
+    scheme: 'Pisces',
     version: '7.1.1',
     sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
     back2top: true,
@@ -259,7 +259,7 @@
 
     
 
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+    <a href="/category/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
 
   </li>
         
@@ -299,14 +299,46 @@
 
       
       
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
     </ul>
   
 
   
-    
 
   
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
 
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
   
 </nav>
 
@@ -332,6 +364,9 @@
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+          
+            
+
           
           <div id="content" class="content">
             
@@ -781,8 +816,9 @@
   
 
 
-  <script src="/js/schemes/muse.js?v=7.1.1"></script>
+  <script src="/js/affix.js?v=7.1.1"></script>
 
+  <script src="/js/schemes/pisces.js?v=7.1.1"></script>
 
 
 
@@ -812,6 +848,19 @@
 
   
 
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/algolia-search.js?v=7.1.1"></script>
 
 
 
