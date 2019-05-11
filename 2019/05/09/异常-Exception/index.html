@@ -96,17 +96,18 @@
 
 
 
-  <meta name="description" content="异常exception1. SYSTEM EXCEPTION12345678910DECLARESTU STUDENT%ROWTYPE;BEGINSELECT * INTO STUFROM STUDENT WHERE SNO=&apos;201901&apos;;DBMS_OUTPUT.PUT_LINE(STU.SNAME||&apos;,&apos;||STU.SNO);EXCEPTIONWHEN NO_DATA_FOUND THEN">
+  <meta name="description" content="1. SYSTEM EXCEPTION12345678910DECLARESTU STUDENT%ROWTYPE;BEGINSELECT * INTO STUFROM STUDENT WHERE SNO=&apos;201901&apos;;DBMS_OUTPUT.PUT_LINE(STU.SNAME||&apos;,&apos;||STU.SNO);EXCEPTIONWHEN NO_DATA_FOUND THENDBMS_OUTPUT">
+<meta name="keywords" content="OracleDB">
 <meta property="og:type" content="article">
 <meta property="og:title" content="异常(Exception)">
 <meta property="og:url" content="http://yoursite.com/2019/05/09/异常-Exception/index.html">
 <meta property="og:site_name" content="Xeby">
-<meta property="og:description" content="异常exception1. SYSTEM EXCEPTION12345678910DECLARESTU STUDENT%ROWTYPE;BEGINSELECT * INTO STUFROM STUDENT WHERE SNO=&apos;201901&apos;;DBMS_OUTPUT.PUT_LINE(STU.SNAME||&apos;,&apos;||STU.SNO);EXCEPTIONWHEN NO_DATA_FOUND THEN">
+<meta property="og:description" content="1. SYSTEM EXCEPTION12345678910DECLARESTU STUDENT%ROWTYPE;BEGINSELECT * INTO STUFROM STUDENT WHERE SNO=&apos;201901&apos;;DBMS_OUTPUT.PUT_LINE(STU.SNAME||&apos;,&apos;||STU.SNO);EXCEPTIONWHEN NO_DATA_FOUND THENDBMS_OUTPUT">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-09T14:07:42.363Z">
+<meta property="og:updated_time" content="2019-05-11T04:33:49.104Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="异常(Exception)">
-<meta name="twitter:description" content="异常exception1. SYSTEM EXCEPTION12345678910DECLARESTU STUDENT%ROWTYPE;BEGINSELECT * INTO STUFROM STUDENT WHERE SNO=&apos;201901&apos;;DBMS_OUTPUT.PUT_LINE(STU.SNAME||&apos;,&apos;||STU.SNO);EXCEPTIONWHEN NO_DATA_FOUND THEN">
+<meta name="twitter:description" content="1. SYSTEM EXCEPTION12345678910DECLARESTU STUDENT%ROWTYPE;BEGINSELECT * INTO STUFROM STUDENT WHERE SNO=&apos;201901&apos;;DBMS_OUTPUT.PUT_LINE(STU.SNAME||&apos;,&apos;||STU.SNO);EXCEPTIONWHEN NO_DATA_FOUND THENDBMS_OUTPUT">
 
 
 
@@ -343,12 +344,24 @@
                 
               
 
-              <time title="创建时间：2019-05-09 22:07:15 / 修改时间：22:07:42" itemprop="dateCreated datePublished" datetime="2019-05-09T22:07:15+08:00">2019-05-09</time>
+              <time title="创建时间：2019-05-09 22:07:15" itemprop="dateCreated datePublished" datetime="2019-05-09T22:07:15+08:00">2019-05-09</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-05-11 12:33:49" itemprop="dateModified" datetime="2019-05-11T12:33:49+08:00">2019-05-11</time>
               
             
           </span>
@@ -382,7 +395,7 @@
       
 
       
-        <h1 id="异常exception"><a href="#异常exception" class="headerlink" title="异常exception"></a>异常exception</h1><h3 id="1-SYSTEM-EXCEPTION"><a href="#1-SYSTEM-EXCEPTION" class="headerlink" title="1. SYSTEM EXCEPTION"></a>1. SYSTEM EXCEPTION</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DECLARE</span></span><br><span class="line">STU STUDENT%ROWTYPE;</span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">INTO</span> STU</span><br><span class="line"><span class="keyword">FROM</span> STUDENT <span class="keyword">WHERE</span> SNO=<span class="string">'201901'</span>;</span><br><span class="line">DBMS_OUTPUT.PUT_LINE(STU.SNAME||','||STU.SNO);</span><br><span class="line">EXCEPTION</span><br><span class="line">WHEN NO_DATA_FOUND THEN</span><br><span class="line">DBMS_OUTPUT.PUT_LINE('FUCK!');</span><br><span class="line"><span class="keyword">END</span>;</span><br></pre></td></tr></table></figure>
+        <h3 id="1-SYSTEM-EXCEPTION"><a href="#1-SYSTEM-EXCEPTION" class="headerlink" title="1. SYSTEM EXCEPTION"></a>1. SYSTEM EXCEPTION</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DECLARE</span></span><br><span class="line">STU STUDENT%ROWTYPE;</span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">INTO</span> STU</span><br><span class="line"><span class="keyword">FROM</span> STUDENT <span class="keyword">WHERE</span> SNO=<span class="string">'201901'</span>;</span><br><span class="line">DBMS_OUTPUT.PUT_LINE(STU.SNAME||','||STU.SNO);</span><br><span class="line">EXCEPTION</span><br><span class="line">WHEN NO_DATA_FOUND THEN</span><br><span class="line">DBMS_OUTPUT.PUT_LINE('FUCK!');</span><br><span class="line"><span class="keyword">END</span>;</span><br></pre></td></tr></table></figure>
 <hr>
 
       
@@ -437,6 +450,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/OracleDB/" rel="tag"># OracleDB</a>
+          
+        </div>
       
 
       
@@ -545,7 +564,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">1</span>
+                      
+                    
+                    <span class="site-state-item-count">2</span>
                     <span class="site-state-item-name">标签</span>
                   
                 </div>
@@ -598,7 +619,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#异常exception"><span class="nav-number">1.</span> <span class="nav-text">异常exception</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-SYSTEM-EXCEPTION"><span class="nav-number">1.0.1.</span> <span class="nav-text">1. SYSTEM EXCEPTION</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-SYSTEM-EXCEPTION"><span class="nav-number">1.</span> <span class="nav-text">1. SYSTEM EXCEPTION</span></a></li></ol></div>
             
 
           </div>
