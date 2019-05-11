@@ -96,17 +96,18 @@
 
 
 
-  <meta name="description" content="过程语言(PL_SQL) 列变量  12345678DECLAREstuno student.sno%type;stuname student.sname%TYPE;BEGINSELECT SNO,SNAME INTO STUNO,STUNAMEFROM student WHERE SNO=&amp;apos;201901&amp;apos;;DBMS_OUTPUT.PUT_LINE(STUNO||&amp;apos;,">
+  <meta name="description" content="kaldi 安装   环境      OS Arch Linux   其他包 Python 2.7   git     说明 最好在类Unix环境下进行操作 必需安装Pyton2.7版本，如果你的环境中还含有其他版本的Python,kaldi会将2.7版本指定为系统默认python。    安装和编译执行： git clone https://github.com/kaldi-asr/kaldi.">
+<meta name="keywords" content="kaldi">
 <meta property="og:type" content="article">
-<meta property="og:title" content="过程语言(PL_SQL)">
-<meta property="og:url" content="http://yoursite.com/2019/05/09/过程语言-PL-SQL/index.html">
+<meta property="og:title" content="kaldi安装">
+<meta property="og:url" content="http://yoursite.com/2019/05/11/kaldi安装/index.html">
 <meta property="og:site_name" content="Xeby">
-<meta property="og:description" content="过程语言(PL_SQL) 列变量  12345678DECLAREstuno student.sno%type;stuname student.sname%TYPE;BEGINSELECT SNO,SNAME INTO STUNO,STUNAMEFROM student WHERE SNO=&amp;apos;201901&amp;apos;;DBMS_OUTPUT.PUT_LINE(STUNO||&amp;apos;,">
+<meta property="og:description" content="kaldi 安装   环境      OS Arch Linux   其他包 Python 2.7   git     说明 最好在类Unix环境下进行操作 必需安装Pyton2.7版本，如果你的环境中还含有其他版本的Python,kaldi会将2.7版本指定为系统默认python。    安装和编译执行： git clone https://github.com/kaldi-asr/kaldi.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-09T14:13:53.934Z">
+<meta property="og:updated_time" content="2019-05-11T01:44:59.266Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="过程语言(PL_SQL)">
-<meta name="twitter:description" content="过程语言(PL_SQL) 列变量  12345678DECLAREstuno student.sno%type;stuname student.sname%TYPE;BEGINSELECT SNO,SNAME INTO STUNO,STUNAMEFROM student WHERE SNO=&amp;apos;201901&amp;apos;;DBMS_OUTPUT.PUT_LINE(STUNO||&amp;apos;,">
+<meta name="twitter:title" content="kaldi安装">
+<meta name="twitter:description" content="kaldi 安装   环境      OS Arch Linux   其他包 Python 2.7   git     说明 最好在类Unix环境下进行操作 必需安装Pyton2.7版本，如果你的环境中还含有其他版本的Python,kaldi会将2.7版本指定为系统默认python。    安装和编译执行： git clone https://github.com/kaldi-asr/kaldi.">
 
 
 
@@ -114,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/05/09/过程语言-PL-SQL/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/11/kaldi安装/">
 
 
 
@@ -124,7 +125,7 @@
   };
 </script>
 
-  <title>过程语言(PL_SQL) | Xeby</title>
+  <title>kaldi安装 | Xeby</title>
   
 
 
@@ -300,7 +301,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/09/过程语言-PL-SQL/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/11/kaldi安装/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Glitch">
@@ -317,7 +318,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">过程语言(PL_SQL)
+          <h2 class="post-title" itemprop="name headline">kaldi安装
 
               
             
@@ -343,7 +344,7 @@
                 
               
 
-              <time title="创建时间：2019-05-09 22:13:41 / 修改时间：22:13:53" itemprop="dateCreated datePublished" datetime="2019-05-09T22:13:41+08:00">2019-05-09</time>
+              <time title="创建时间：2019-05-11 09:44:28 / 修改时间：09:44:59" itemprop="dateCreated datePublished" datetime="2019-05-11T09:44:28+08:00">2019-05-11</time>
             
 
             
@@ -382,22 +383,49 @@
       
 
       
-        <h1 id="过程语言-PL-SQL"><a href="#过程语言-PL-SQL" class="headerlink" title="过程语言(PL_SQL)"></a>过程语言(PL_SQL)</h1><ol>
-<li>列变量</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">DECLARE</span><br><span class="line">stuno student.sno%type;</span><br><span class="line">stuname student.sname%TYPE;</span><br><span class="line">BEGIN</span><br><span class="line">SELECT SNO,SNAME INTO STUNO,STUNAME</span><br><span class="line">FROM student WHERE SNO=&apos;201901&apos;;</span><br><span class="line">DBMS_OUTPUT.PUT_LINE(STUNO||&apos;,&apos;||STUNAME);</span><br><span class="line">END;</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>行变量</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">DECLARE</span><br><span class="line">STU STUDENT%ROWTYPE;</span><br><span class="line">BEGIN</span><br><span class="line">SELECT * INTO STU</span><br><span class="line">FROM STUDENT WHERE SNO=&apos;201901&apos;;</span><br><span class="line">DBMS_OUTPUT.PUT_LINE(STU.SNAME||&apos;,&apos;||STU.SNO);</span><br><span class="line">END;</span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>游标变量</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">DECLARE</span><br><span class="line">STU STUDENT%ROWTYPE;</span><br><span class="line">BEGIN</span><br><span class="line">SELECT * INTO STU</span><br><span class="line">FROM STUDENT WHERE SNO=&apos;201901&apos;;</span><br><span class="line">DBMS_OUTPUT.PUT_LINE(STU.SNAME||&apos;,&apos;||STU.SNO);</span><br><span class="line">END;</span><br><span class="line">declare </span><br><span class="line">stu student%rowtype;</span><br><span class="line">cursor cur_stu is select * from student;</span><br><span class="line">begin </span><br><span class="line">OPEN cur_stu;</span><br><span class="line">LOOP </span><br><span class="line">FETCH CUR_STU INTO STU;</span><br><span class="line">EXIT WHEN CUR_STU%NOTFOUND;</span><br></pre></td></tr></table></figure>
-<ol start="4">
-<li>隐式游标</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">begin </span><br><span class="line">    UPDATE student set totalcredit =totalcredit*1.5;</span><br><span class="line">    if sql%notfound then </span><br><span class="line">        dbms_output.putline(sql%rowcount);</span><br><span class="line">    end if;</span><br><span class="line">end;</span><br></pre></td></tr></table></figure>
+        <h1 id="kaldi-安装"><a href="#kaldi-安装" class="headerlink" title="kaldi 安装"></a>kaldi 安装</h1><table>
+<thead>
+<tr>
+<th>环境</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OS</td>
+<td>Arch Linux</td>
+</tr>
+<tr>
+<td>其他包</td>
+<td>Python 2.7   git</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>说明<ul>
+<li>最好在类Unix环境下进行操作</li>
+<li>必需安装Pyton2.7版本，如果你的环境中还含有其他版本的Python,kaldi会将2.7版本指定为系统默认python。</li>
+</ul>
+</li>
+</ul>
+<h2 id="安装和编译"><a href="#安装和编译" class="headerlink" title="安装和编译"></a>安装和编译</h2><p>执行：</p>
+<p><code>git clone https://github.com/kaldi-asr/kaldi.git kaldi --origin golden</code></p>
+<p>如果下载速度太慢，可以考虑先在git中登录你的github帐号，方法自行google。</p>
+<p>进入到 kaldi/tools目录</p>
+<p><code>cd kaldi/tools</code></p>
+<p>编译：</p>
+<p><code>make</code></p>
+<p>我在这一步遇到一些依赖问题</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[archer@archlinux tools]$ make</span><br><span class="line">extras/check_dependencies.sh</span><br><span class="line">extras/check_dependencies.sh: unzip is not installed.</span><br><span class="line">extras/check_dependencies.sh: sox is not installed.</span><br><span class="line">extras/check_dependencies.sh: subversion is not installed</span><br><span class="line">extras/check_dependencies.sh: WARNING python 2.7 is not the default python. We fixed this by adding a correct symlink more prominently</span><br><span class="line"> ... If you really want to use python 3.7.3 as default, add an empty file /home/archer/Kaldi/kaldi-trunk/tools/python/.use_default_pyt</span><br><span class="line">extras/check_dependencies.sh: Intel MKL is not installed. Run extras/install_mkl.sh to install it.</span><br><span class="line"> ... You can also use other matrix algebra libraries. For information, see:</span><br><span class="line"> ...   http://kaldi-asr.org/doc/matrixwrap.html</span><br><span class="line">extras/check_dependencies.sh: The following prerequisites are missing; install them first:</span><br><span class="line">   unzip sox subversion</span><br><span class="line">make: *** [Makefile:33: check_required_programs] Error 1</span><br></pre></td></tr></table></figure>
+<p>提示我unzip sox subversion没安装</p>
+<p><code>yaourt -S unzip sox subversion</code>即可。</p>
+<p>cd到src目录</p>
+<p><code>cd ../src</code></p>
+<p>编译</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">./configure</span><br><span class="line">make</span><br></pre></td></tr></table></figure>
+<p>遇到的问题：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[archer@archlinux tools]$ <span class="built_in">cd</span> ../src/</span><br><span class="line">[archer@archlinux src]$ ./configure </span><br><span class="line">Configuring KALDI to use MKL.</span><br><span class="line">Checking compiler g++ ...</span><br><span class="line">Checking OpenFst library <span class="keyword">in</span>  ...</span><br><span class="line">***configure failed: Could not find file /include/fst/fst.h:</span><br><span class="line">  you may not have installed OpenFst. See ../tools/INSTALL ***</span><br></pre></td></tr></table></figure>
+<p><code>yaourt -S openfst</code>即可解决。</p>
 
       
     </div>
@@ -452,6 +480,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/kaldi/" rel="tag"># kaldi</a>
+          
+        </div>
+      
 
       
       
@@ -461,8 +495,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/09/触发器-Trigger/" rel="next" title="触发器(Trigger)">
-                <i class="fa fa-chevron-left"></i> 触发器(Trigger)
+              <a href="/2019/05/09/过程语言-PL-SQL/" rel="next" title="过程语言(PL_SQL)">
+                <i class="fa fa-chevron-left"></i> 过程语言(PL_SQL)
               </a>
             
           </div>
@@ -470,10 +504,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/05/11/kaldi安装/" rel="prev" title="kaldi安装">
-                kaldi安装 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -612,7 +642,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#过程语言-PL-SQL"><span class="nav-number">1.</span> <span class="nav-text">过程语言(PL_SQL)</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#kaldi-安装"><span class="nav-number">1.</span> <span class="nav-text">kaldi 安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装和编译"><span class="nav-number">1.1.</span> <span class="nav-text">安装和编译</span></a></li></ol></li></ol></div>
             
 
           </div>

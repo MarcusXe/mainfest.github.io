@@ -297,6 +297,191 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/11/kaldi安装/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Glitch">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xeby">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/05/11/kaldi安装/" class="post-title-link" itemprop="url">kaldi安装</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-05-11 09:44:28 / 修改时间：09:44:59" itemprop="dateCreated datePublished" datetime="2019-05-11T09:44:28+08:00">2019-05-11</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="kaldi-安装"><a href="#kaldi-安装" class="headerlink" title="kaldi 安装"></a>kaldi 安装</h1><table>
+<thead>
+<tr>
+<th>环境</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OS</td>
+<td>Arch Linux</td>
+</tr>
+<tr>
+<td>其他包</td>
+<td>Python 2.7   git</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>说明<ul>
+<li>最好在类Unix环境下进行操作</li>
+<li>必需安装Pyton2.7版本，如果你的环境中还含有其他版本的Python,kaldi会将2.7版本指定为系统默认python。</li>
+</ul>
+</li>
+</ul>
+<h2 id="安装和编译"><a href="#安装和编译" class="headerlink" title="安装和编译"></a>安装和编译</h2><p>执行：</p>
+<p><code>git clone https://github.com/kaldi-asr/kaldi.git kaldi --origin golden</code></p>
+<p>如果下载速度太慢，可以考虑先在git中登录你的github帐号，方法自行google。</p>
+<p>进入到 kaldi/tools目录</p>
+<p><code>cd kaldi/tools</code></p>
+<p>编译：</p>
+<p><code>make</code></p>
+<p>我在这一步遇到一些依赖问题</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[archer@archlinux tools]$ make</span><br><span class="line">extras/check_dependencies.sh</span><br><span class="line">extras/check_dependencies.sh: unzip is not installed.</span><br><span class="line">extras/check_dependencies.sh: sox is not installed.</span><br><span class="line">extras/check_dependencies.sh: subversion is not installed</span><br><span class="line">extras/check_dependencies.sh: WARNING python 2.7 is not the default python. We fixed this by adding a correct symlink more prominently</span><br><span class="line"> ... If you really want to use python 3.7.3 as default, add an empty file /home/archer/Kaldi/kaldi-trunk/tools/python/.use_default_pyt</span><br><span class="line">extras/check_dependencies.sh: Intel MKL is not installed. Run extras/install_mkl.sh to install it.</span><br><span class="line"> ... You can also use other matrix algebra libraries. For information, see:</span><br><span class="line"> ...   http://kaldi-asr.org/doc/matrixwrap.html</span><br><span class="line">extras/check_dependencies.sh: The following prerequisites are missing; install them first:</span><br><span class="line">   unzip sox subversion</span><br><span class="line">make: *** [Makefile:33: check_required_programs] Error 1</span><br></pre></td></tr></table></figure>
+<p>提示我unzip sox subversion没安装</p>
+<p><code>yaourt -S unzip sox subversion</code>即可。</p>
+<p>cd到src目录</p>
+<p><code>cd ../src</code></p>
+<p>编译</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">./configure</span><br><span class="line">make</span><br></pre></td></tr></table></figure>
+<p>遇到的问题：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[archer@archlinux tools]$ <span class="built_in">cd</span> ../src/</span><br><span class="line">[archer@archlinux src]$ ./configure </span><br><span class="line">Configuring KALDI to use MKL.</span><br><span class="line">Checking compiler g++ ...</span><br><span class="line">Checking OpenFst library <span class="keyword">in</span>  ...</span><br><span class="line">***configure failed: Could not find file /include/fst/fst.h:</span><br><span class="line">  you may not have installed OpenFst. See ../tools/INSTALL ***</span><br></pre></td></tr></table></figure>
+<p><code>yaourt -S openfst</code>即可解决。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/09/过程语言-PL-SQL/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1758,7 +1943,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1766,6 +1951,19 @@
 
               
 
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">标签</span>
+                  
+                </div>
               
             </nav>
           
