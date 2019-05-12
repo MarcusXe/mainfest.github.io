@@ -331,6 +331,212 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/12/能用上的Linux/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Glitch">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xeby">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/05/12/能用上的Linux/" class="post-title-link" itemprop="url">能用上的Linux</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-05-12 15:11:57 / 修改时间：15:36:35" itemprop="dateCreated datePublished" datetime="2019-05-12T15:11:57+08:00">2019-05-12</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="不常用但是需要记住"><a href="#不常用但是需要记住" class="headerlink" title="不常用但是需要记住"></a>不常用但是需要记住</h1><h2 id="独显运行程序"><a href="#独显运行程序" class="headerlink" title="独显运行程序"></a>独显运行程序</h2><p><code>optirun +&lt; &gt;</code></p>
+<h2 id="启动服务"><a href="#启动服务" class="headerlink" title="启动服务"></a>启动服务</h2><p><code>systemctl start/restart/enable/disable/reload &lt; &gt;</code></p>
+<h2 id="结束进程"><a href="#结束进程" class="headerlink" title="结束进程"></a>结束进程</h2><p><code>kill -9 &lt; &gt;</code></p>
+<p>+++</p>
+<h2 id="查看端口占用"><a href="#查看端口占用" class="headerlink" title="查看端口占用"></a>查看端口占用</h2><p><code>netstat -anp|grep 80</code></p>
+<h2 id="VIM"><a href="#VIM" class="headerlink" title="VIM"></a>VIM</h2><table>
+<thead>
+<tr>
+<th style="text-align:left">命令</th>
+<th style="text-align:left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">y</td>
+<td style="text-align:left">复制</td>
+</tr>
+<tr>
+<td style="text-align:left">p</td>
+<td style="text-align:left">粘贴</td>
+</tr>
+<tr>
+<td style="text-align:left">:wq</td>
+<td style="text-align:left">保存退出</td>
+</tr>
+<tr>
+<td style="text-align:left">:q!</td>
+<td style="text-align:left">强制退出</td>
+</tr>
+<tr>
+<td style="text-align:left">u</td>
+<td style="text-align:left">撤销</td>
+</tr>
+<tr>
+<td style="text-align:left">/</td>
+<td style="text-align:left">搜索</td>
+</tr>
+</tbody>
+</table>
+<h1 id="常用目录"><a href="#常用目录" class="headerlink" title="常用目录"></a>常用目录</h1><h2 id="EFI目录"><a href="#EFI目录" class="headerlink" title="EFI目录"></a>EFI目录</h2><p><code>/boot/efi</code></p>
+<h2 id="grub配置文件"><a href="#grub配置文件" class="headerlink" title="grub配置文件"></a>grub配置文件</h2><p><code>/boot/grub/grub.cfg</code></p>
+<hr>
+<h1 id="常用配置"><a href="#常用配置" class="headerlink" title="常用配置"></a>常用配置</h1><h2 id="grub中windows启动项配置模板"><a href="#grub中windows启动项配置模板" class="headerlink" title="grub中windows启动项配置模板"></a>grub中windows启动项配置模板</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">menuentry 'Windows Boot Manager (on /dev/sda1)' --class windows --class os $menuentry_id_option 'osprober-efi-628C-6D96' &#123;</span><br><span class="line">        insmod part_gpt</span><br><span class="line">        insmod fat</span><br><span class="line">        set root='hd0,gpt1'</span><br><span class="line">        if [ x$feature_platform_search_hint = xy ]; then</span><br><span class="line">          search --no-floppy --fs-uuid --set=root --hint-ieee1275='ieee1275//disk@0,gpt1' --hint-bios=hd0,gpt1 --hint-efi=hd0,gpt1 --hint-baremetal=ahci0,gpt1  628C-6D96</span><br><span class="line">        else</span><br><span class="line">          search --no-floppy --fs-uuid --set=root 628C-6D96</span><br><span class="line">        fi</span><br><span class="line">        chainloader /efi/Microsoft/Boot/bootmgfw.efi</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="systemd-服务配置模板"><a href="#systemd-服务配置模板" class="headerlink" title="systemd 服务配置模板"></a>systemd 服务配置模板</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=V2Ray Service</span><br><span class="line">After=network.target</span><br><span class="line">Wants=network.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line"><span class="meta">#</span><span class="bash"> This service runs as root. You may consider to run it as another user <span class="keyword">for</span> security concerns.</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> By uncommenting the following two lines, this service will run as user v2ray/v2ray.</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> More discussion at https://github.com/v2ray/v2ray-core/issues/1011</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> User=v2ray</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> Group=v2ray</span></span><br><span class="line">Type=simple</span><br><span class="line">PIDFile=/run/v2ray.pid</span><br><span class="line">Environment=V2RAY_LOCATION_ASSET=/etc/v2ray</span><br><span class="line">ExecStart=/usr/bin/v2ray -config /etc/v2ray/config.json</span><br><span class="line">Restart=on-failure</span><br><span class="line"><span class="meta">#</span><span class="bash"> Don<span class="string">'t restart in the case of configuration error</span></span></span><br><span class="line">RestartPreventExitStatus=23</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
+<p>## </p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/12/hexo使用记录/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1819,148 +2025,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/09/序列-Sequence/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Glitch">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Xeby">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/05/09/序列-Sequence/" class="post-title-link" itemprop="url">序列(Sequence)</a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-05-09 22:08:13 / 修改时间：22:09:10" itemprop="dateCreated datePublished" datetime="2019-05-09T22:08:13+08:00">2019-05-09</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2007,7 +2071,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">12</span>
+                    <span class="site-state-item-count">13</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2030,7 +2094,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">3</span>
+                      
+                    
+                    <span class="site-state-item-count">4</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -2059,7 +2125,23 @@
                     
                       
                     
-                    <span class="site-state-item-count">6</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">14</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
