@@ -376,12 +376,34 @@
                 
               
 
-              <time title="创建时间：2019-05-12 14:34:23" itemprop="dateCreated datePublished" datetime="2019-05-12T14:34:23+08:00">2019-05-12</time>
+              <time title="创建时间：2019-05-12 14:34:23 / 修改时间：14:45:29" itemprop="dateCreated datePublished" datetime="2019-05-12T14:34:23+08:00">2019-05-12</time>
             
 
+            
+              
+
+              
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/hexo/" itemprop="url" rel="index"><span itemprop="name">hexo</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -413,7 +435,15 @@
       
         
           
-            
+            <h1 id="技巧"><a href="#技巧" class="headerlink" title="技巧"></a>技巧</h1><p><code>在文章中间插入</code> </p>
+<p><code>&lt;!--more--&gt;</code></p>
+<p>标签可以折叠文章</p>
+<h1 id="错误"><a href="#错误" class="headerlink" title="错误"></a>错误</h1><ol>
+<li>不要再文章中出现两个连续的大括号,解析会出错.</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Template render error: (unknown path) [Line 257, Column 42]</span><br><span class="line">expected variable end</span><br></pre></td></tr></table></figure>
+<p>解决方案,在大括号之间加空格.</p>
+
           
         
       
@@ -514,7 +544,7 @@
                 
               
 
-              <time title="创建时间：2019-05-12 12:31:52 / 修改时间：14:31:55" itemprop="dateCreated datePublished" datetime="2019-05-12T12:31:52+08:00">2019-05-12</time>
+              <time title="创建时间：2019-05-12 12:31:52 / 修改时间：14:45:50" itemprop="dateCreated datePublished" datetime="2019-05-12T12:31:52+08:00">2019-05-12</time>
             
 
             
@@ -524,6 +554,24 @@
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Kaldi/" itemprop="url" rel="index"><span itemprop="name">Kaldi</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -554,273 +602,16 @@
 
       
         
+          <h1 id="Kaldi教程：须知"><a href="#Kaldi教程：须知" class="headerlink" title="Kaldi教程：须知"></a>Kaldi教程：须知</h1><p>本教程假设您了解使用HMM-GMM方法进行语音识别的基础知识。在线提供的一个简短介绍是：M。Gales和S. Young（2007）。”隐马尔可夫模型在语音识别中的应用。”信号处理的基础和趋势1（3）：195-304.HTK Book也是一个很好的资源。但是，除非你有强大的数学背景并且非常专注我们不鼓励尝试在机构环境之外学习语音识别。本教程的目标读者是语音识别研究人员，或无论如何都在研究这个领域的毕业生或高年级的本科生。</p>
+          <!--noindex-->
           
-            <h1 id="Kaldi教程：须知"><a href="#Kaldi教程：须知" class="headerlink" title="Kaldi教程：须知"></a>Kaldi教程：须知</h1><p>本教程假设您了解使用HMM-GMM方法进行语音识别的基础知识。在线提供的一个简短介绍是：M。Gales和S. Young（2007）。”隐马尔可夫模型在语音识别中的应用。”信号处理的基础和趋势1（3）：195-304.HTK Book也是一个很好的资源。但是，除非你有强大的数学背景并且非常专注我们不鼓励尝试在机构环境之外学习语音识别。本教程的目标读者是语音识别研究人员，或无论如何都在研究这个领域的毕业生或高年级的本科生。</p>
-<p>我们假设您了解C ++，并至少熟悉shell脚本，最好使用bash或类似的shell。本教程假设您使用的是类UNIX环境或Cygwin（尽管Kaldi并不一定在这些环境中编译和运行)。</p>
-<p>此外，重要的是，本教程假设您可以从LDC分发的原始格式访问语言数据联盟（LDC）中的资源管理（RM）CD上的数据。也就是说，我们假设这些数据位于您的系统某处。我们以目录号LDC93S3A获得了这个。它也有两个单独的部分。要注意，因为以前存在不同布局的RM数据的不同分布。</p>
-<p>系统要求是相当基本的。我们假设你有工具，包括wget，git，svn，awk，perl等，或者你知道如何安装它们。安装过程中最困难的部分与数学库ATLAS有关; 如果尚未将其作为库安装在你的系统上，则必须对其进行编译，这需要关闭CPU限制(cpu throttlingt)，这可能需要root权限。我们提供所有安装步骤的脚本和详细说明。当脚本失败时，请仔细阅读输出，因为它试图提供有关如何解决问题的指导。如果有任何问题，请通知我们，无论多么小的问题; 查看<a href="https://kaldi-asr.org/doc/other.html" target="_blank" rel="noopener">其他与Kaldi相关的资源(以及如何获得帮助)</a>。</p>
-<p>我们尝试提供一些想法，以执行本教程的每个步骤需要多长时间。如果完成本教程的时间有限，我们建议您尝试保留已发布的时间表，如有必要，请跳过步骤并避免链接到我们在文本中提供的更多信息。这有助于确保您获得均衡的概述。您可以随时查看更详细的材料。如果要在课堂设置中提供本教程，则必须事先在相关系统上运行教程，以验证是否已安装所有先决条件。</p>
-<h1 id="Kaldi教程：入门-15分钟"><a href="#Kaldi教程：入门-15分钟" class="headerlink" title="Kaldi教程：入门(15分钟)"></a>Kaldi教程：入门(15分钟)</h1><p>第一步是下载和安装Kaldi。我们将使用工具包的第1版，因此本教程不会过时。但是，请注意“trunk”中的代码和脚本(始终是最新的)更易于安装，通常更好。如果使用“trunk”代码，您还可以尝试使用最新的脚本，这些脚本位于“egs/rm/s5”目录中，而不是本教程中提到的“s3”脚本。但请注意，如果您这样做，本教程的某些方面可能已过时。</p>
-<p>假设安装了Git，要获取最新的代码，您可以输入:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/kaldi-asr/kaldi.git</span><br></pre></td></tr></table></figure>
-<p>然后cd到kaldi。查看INSTALL文件并按照说明操作(它指向两个子目录)。仔细查看安装脚本的输出，因为它们会尝试指导您做什么。一些安装错误是非致命的，安装脚本会告诉你(也就是说它安装了一些很好的东西，但不是真的需要)。”最佳情况”是你执行如下命令：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd kaldi/tools/; </span><br><span class="line">make;</span><br><span class="line">cd ../src;</span><br><span class="line">./configure; </span><br><span class="line">make</span><br></pre></td></tr></table></figure>
-<p>然后一切顺利进行(几乎不可能); 但是，如果出现问题，则需要一步一步查找原因(例如，您可能需要在计算机上安装一些软件包，或者在工具中运行install_atlas.sh，或者手动在工具/INSTALL中运行一些步骤，或者为configure脚本提供选项在src/)。如果有问题，可能会有一些信息在<a href="https://kaldi-asr.org/doc/build_setup.html" target="_blank" rel="noopener">构建过程中(如何编译Kaldi）</a>对您有所帮助; 否则，请随时联系维护人员(<a href="https://kaldi-asr.org/doc/other.html" target="_blank" rel="noopener">其他与Kaldi相关的资源(以及如何获得帮助)</a>)，我们将很乐意为您提供帮助。</p>
-<h1 id="Kaldi教程：使用Git进行版本控制-5分钟"><a href="#Kaldi教程：使用Git进行版本控制-5分钟" class="headerlink" title="Kaldi教程：使用Git进行版本控制(5分钟)"></a>Kaldi教程：使用Git进行版本控制(5分钟)</h1><p>Git是一个分布式版本控制系统。这意味着，与Subversion不同，存储库有多个副本，并且这些更改在这些副本之间以多种不同的方式显式传输，但大多数情况下，一个人的工作由存储库的单个副本支持。由于这种复制品的多样性，您可能需要遵循多种可能的<em>工作流程</em>。如果您只是想首先<em>编译和使用</em> Kaldi，那么这是我们认为最适合您的一个，但在某些时候可选择决定将您的工作<em>贡献</em>给项目。</p>
-<h2 id="第一次Git设置"><a href="#第一次Git设置" class="headerlink" title="第一次Git设置"></a>第一次Git设置</h2><p>如果您之前从未使用过Git，请先<a href="https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup" target="_blank" rel="noopener">执行一些基本配置</a>。至少，设置您的姓名和电子邮件地址：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name &quot;John Doe&quot;</span><br><span class="line">$ git config --global user.email johndoe@example.com</span><br></pre></td></tr></table></figure>
-<p>另外，为最常输入的最有用的git命令设置短名称。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global alias.co checkout</span><br><span class="line">$ git config --global alias.br branch</span><br><span class="line">$ git config --global alias.st status</span><br></pre></td></tr></table></figure>
-<p>另一个非常有用的实用程序<code>git-prompts.sh</code>，一个用于Git的bash提示扩展实用程序(如果你没有它，搜索互联网如何在你的系统上安装它)。安装后，它提供了一个shell函数<code>__git_ps1</code>，当添加到提示符时，会扩展为当前分支名称和挂起的提交标记，因此您不会忘记它的位置。您可以修改<code>PS1</code>shell变量，使其包含字面意义<code>$(__git_ps1 &quot;[%s]&quot;)</code>。我在<code>~/.bashrc</code>中有这个：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">PS1=<span class="string">'\[\033[00;32m\]\u@\h\[\033[0m\]:\[\033[00;33m\]\w\[\033[01;36m\]$(__git_ps1 "[%s]")\[\033[01;33m\]\$\[\033[00m\] '</span></span><br><span class="line"><span class="built_in">export</span> GIT_PS1_SHOWDIRTYSTATE=<span class="literal">true</span> GIT_PS1_SHOWSTASHSTATE=<span class="literal">true</span></span><br><span class="line"><span class="comment"># fake __git_ps1 when git-prompts.sh not installed</span></span><br><span class="line"><span class="keyword">if</span> [ <span class="string">"<span class="variable">$(type -t __git_ps1)</span>"</span> == <span class="string">""</span> ]; <span class="keyword">then</span></span><br><span class="line">  <span class="keyword">function</span> <span class="function"><span class="title">__git_ps1</span></span>() &#123; :; &#125;</span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
-<h2 id="用户工作流程"><a href="#用户工作流程" class="headerlink" title="用户工作流程"></a>用户工作流程</h2><p>使用以下命令设置存储库和工作目录：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">kkm@yupana:~$ git <span class="built_in">clone</span> https://github.com/kaldi-asr/kaldi.git --branch master --single-branch --origin golden</span><br><span class="line">Cloning into <span class="string">'kaldi'</span>...</span><br><span class="line">remote: Counting objects: 51770, <span class="keyword">done</span>.</span><br><span class="line">remote: Compressing objects: 100% (8/8), <span class="keyword">done</span>.</span><br><span class="line">remote: Total 51770 (delta 2), reused 0 (delta 0), pack-reused 51762</span><br><span class="line">Receiving objects: 100% (51770/51770), 67.72 MiB | 6.52 MiB/s, <span class="keyword">done</span>.</span><br><span class="line">Resolving deltas: 100% (41117/41117), <span class="keyword">done</span>.</span><br><span class="line">Checking connectivity... <span class="keyword">done</span>.</span><br><span class="line">kkm@yupana:~$ <span class="built_in">cd</span> kaldi/</span><br><span class="line">kkm@yupana:~/kaldi[master]$</span><br></pre></td></tr></table></figure>
-<p>现在，您已准备好配置和编译Kaldi并使用它。偶尔您需要本地分支的最新更改。这类似于你通常做的事情<code>svn update</code>。</p>
-<p>但请首先让我们同意一件事：你不在主分支上提交任何文件。我们将在下面讨论。到目前为止，您只使用代码。如果你不遵守规则就很难解开，而且Git在分支方面非常容易，你总是希望在分支上做你的工作。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">kkm@yupana:~/kaldi[master]$ git pull golden</span><br><span class="line">remote: Counting objects: 148, <span class="keyword">done</span>.</span><br><span class="line">remote: Compressing objects: 100% (55/55), <span class="keyword">done</span>.</span><br><span class="line">remote: Total 148 (delta 111), reused 130 (delta 93), pack-reused 0</span><br><span class="line">Receiving objects: 100% (148/148), 18.39 KiB | 0 bytes/s, <span class="keyword">done</span>.</span><br><span class="line">Resolving deltas: 100% (111/111), completed with 63 <span class="built_in">local</span> objects.</span><br><span class="line">From https://github.com/kaldi-asr/kaldi</span><br><span class="line">   658e1b4..827a5d6  master     -&gt; golden/master</span><br></pre></td></tr></table></figure>
-<p>您使用的命令是<code>git pull</code>，<code>golden</code>我们之前用来指定Kaldi存储库主副本的别名。</p>
-<h2 id="从用户到贡献者"><a href="#从用户到贡献者" class="headerlink" title="从用户到贡献者"></a>从用户到贡献者</h2><p>在某些时候，你决定改变Kaldi代码，无论是脚本还是源代码。也许你做了一个简单的错误修复。也许你正在贡献一个完整的单元。无论如何，你总是在一个分支上工作。即使您有未提交的更改，Git也会处理这些更改。例如，您刚刚意识到<code>fisher_english</code>实际上并没有<code>hubscr.pl</code>用于评分，但你检查时它是存的在你编译失败。您在工作树中快速修复了该问题，并希望与项目共享此更改。</p>
-<h3 id="在分支机构本地工作"><a href="#在分支机构本地工作" class="headerlink" title="在分支机构本地工作"></a>在分支机构本地工作</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">kkm@yupana:~/kaldi[master *]$ git fetch golden</span><br><span class="line">kkm@yupana:~/kaldi[master *]$ git co golden/master -b fishfix --no-track</span><br><span class="line">M       fisher_english/s5/<span class="built_in">local</span>/score.sh</span><br><span class="line">Branch fishfix <span class="built_in">set</span> up to track remote branch master from golden.</span><br><span class="line">Switched to a new branch <span class="string">'fishfix'</span></span><br><span class="line">kkm@yupana:~/kaldi[myfix *]$</span><br></pre></td></tr></table></figure>
-<p>那么我们在这里做了什么，我们首先将当前对golden repository的更改<em>提取</em>到您的机器中。这没有更新您的master分支(事实上，如果您有本地工作树更改，则无法拉取)，但确实更新了远程引用<code>golden/master</code>。在第二个命令中，我们在本地存储库中分叉了一个名为的分支<code>fishfix</code>。现在更新<code>master</code>是否合理呢？不！首先，这是一个操作。你”不需要”来更新master分支，那你为什么要这样做？其次，我们知道(记住？）master没有变化。第三，相信我，发生这种情况，你可能会错误地向你的master推送一些东西，并且你不想将这种不好的变化带入你的新分支。</p>
-<p>现在，您检查您的更改，没有问题，提交它们：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">kkm@yupana:~/kaldi[fishfix *]$ git diff</span><br><span class="line">diff --git a/egs/fisher_english/s5/<span class="built_in">local</span>/score.sh b/egs/fisher_english/s5/<span class="built_in">local</span>/score.sh</span><br><span class="line">index 60e4706..552fada 100755</span><br><span class="line">--- a/egs/fisher_english/s5/<span class="built_in">local</span>/score.sh</span><br><span class="line">+++ b/egs/fisher_english/s5/<span class="built_in">local</span>/score.sh</span><br><span class="line">@@ -27,10 +27,6 @@ dir=<span class="variable">$3</span></span><br><span class="line"> model=<span class="variable">$dir</span>/../final.mdl <span class="comment"># assume model one level up from decoding dir.</span></span><br><span class="line">-hubscr=<span class="variable">$KALDI_ROOT</span>/tools/sctk/bin/hubscr.pl</span><br><span class="line">-[ ! -f <span class="variable">$hubscr</span> ] &amp;&amp; <span class="built_in">echo</span> <span class="string">"Cannot find scoring program at <span class="variable">$hubscr</span>"</span> &amp;&amp; <span class="built_in">exit</span> 1;</span><br><span class="line">-hubdir=`dirname <span class="variable">$hubscr</span>`</span><br><span class="line">-</span><br><span class="line"> <span class="keyword">for</span> f <span class="keyword">in</span> <span class="variable">$data</span>/text <span class="variable">$lang</span>/words.txt <span class="variable">$dir</span>/lat.1.gz; <span class="keyword">do</span></span><br><span class="line">   [ ! -f <span class="variable">$f</span> ] &amp;&amp; <span class="built_in">echo</span> <span class="string">"<span class="variable">$0</span>: expecting file <span class="variable">$f</span> to exist"</span> &amp;&amp; <span class="built_in">exit</span> 1;</span><br><span class="line"> <span class="keyword">done</span></span><br><span class="line">kkm@yupana:~/kaldi[fishfix *]$ git commit -am <span class="string">'fisher_english scoring does not really need hubscr.pl from sctk.'</span></span><br><span class="line">[fishfix d7d76fe] fisher_english scoring does not really need hubscr.pl from sctk.</span><br><span class="line"> 1 file changed, 4 deletions(-)</span><br><span class="line">kkm@yupana:~/kaldi[fishfix]$</span><br></pre></td></tr></table></figure>
-<p>请注意，<code>-a</code>选项使<code>git commit</code>提交所有已修改的文件(我们只更改了一个，emmm,也没毛病？)。如果你想将文件修改分成多个功能来单独提交，<code>git add</code>特定文件后跟<code>git commit</code>没有<code>-a</code>选项，然后启动另一个分支与第一个分支相同的点用于下一个修复：<code>git co golden/master -b another-fix –no-track</code>在那里你可以添加和提交其他更改的文件。有了Git，有十几个分支的同时存在并不罕见。请记住，将多个功能分支合并为一个非常容易，但将一个大型变更集拆分为许多较小的功就很烦。</p>
-<p>现在您需要向Kaldi的维护者创建一个pull请求，以便他们可以从您的存储库中获取更改。为此，<em>您的存储库</em>需要在线提供给他们。为此，您需要一个GitHub帐户。</p>
-<h3 id="GitHub设置"><a href="#GitHub设置" class="headerlink" title="GitHub设置"></a>GitHub设置</h3><ul>
-<li>转到<a href="https://github.com/kaldi-asr/kaldi" target="_blank" rel="noopener">主Kaldi存储库页面</a>，然后单击Fork按钮。如果您没有帐户，GitHub将引导您完成必要的步骤。</li>
-<li>使用GitHub <a href="https://help.github.com/articles/generating-ssh-keys/" target="_blank" rel="noopener">生成并注册SSH密钥</a>，以便GitHub可以识别您的身份。每个人都可以在GitHub上阅读所有内容，但只有您可以写入您的分叉存储库！</li>
-</ul>
-<h3 id="创建拉取请求"><a href="#创建拉取请求" class="headerlink" title="创建拉取请求"></a>创建拉取请求</h3><p>确保你的fork在名称下注册<code>origin</code>(别名是任意的，这是我们在这里使用的)。如果没有，请添加它。URL列在“SSH clone URL”下的存储库页面上，看起来像。<a href="mailto:`git@github.com" target="_blank" rel="noopener">`git@github.com</a>:YOUR_USER_NAME/kaldi.git`</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">kkm@yupana:~/kaldi[fishfix]$ git remote -v</span><br><span class="line">golden  https://github.com/kaldi-asr/kaldi.git (fetch)</span><br><span class="line">golden  https://github.com/kaldi-asr/kaldi.git (push)</span><br><span class="line">kkm@yupana:~/kaldi[fishfix]$ git remote add origin git@github.com:kkm000/kaldi.git</span><br><span class="line">kkm@yupana:~/kaldi[fishfix]$ git remote -v</span><br><span class="line">golden  https://github.com/kaldi-asr/kaldi.git (fetch)</span><br><span class="line">golden  https://github.com/kaldi-asr/kaldi.git (push)</span><br><span class="line">origin  git@github.com:kkm000/kaldi.git (fetch)</span><br><span class="line">origin  git@github.com:kkm000/kaldi.git (push)</span><br></pre></td></tr></table></figure>
-<p>现在将分支推入Kaldi的分支：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">kkm@yupana:~/kaldi[fishfix]$ git push origin HEAD -u</span><br><span class="line">Counting objects: 632, <span class="keyword">done</span>.</span><br><span class="line">Delta compression using up to 12 threads.</span><br><span class="line">Compressing objects: 100% (153/153), <span class="keyword">done</span>.</span><br><span class="line">Writing objects: 100% (415/415), 94.45 KiB | 0 bytes/s, <span class="keyword">done</span>.</span><br><span class="line">Total 415 (delta 324), reused 326 (delta 262)</span><br><span class="line">To git@github.com:kkm000/kaldi.git</span><br><span class="line"> * [new branch]      HEAD -&gt; fishfix</span><br><span class="line">Branch fishfix <span class="built_in">set</span> up to track remote branch fishfix from origin.</span><br></pre></td></tr></table></figure>
-<p><code>HEAD</code>在<code>git push</code>告诉Git的”创建具有相同名称作为当前分支远程回购分支”，并<code>-u</code>记住您的本地分支之间的联系<code>fishfix</code>，并<code>origin/fishfix</code>在你的资料库。</p>
-<p>现在转到您的存储库页面并<a href="https://help.github.com/articles/creating-a-pull-request/" target="_blank" rel="noopener">创建一个拉取请求</a>。<a href="https://github.com/kaldi-asr/kaldi/pull/31" target="_blank" rel="noopener">检查您的更改</a>，如果一切正常，请提交请求。维护者将收到请求并接受或评论它。按照注释，在您的分支上提交修复，<code>origin</code>再次推送，GitHub将自动更新拉取请求网页。然后根据您收到的评论回复例如”完成”，以便他们知道您跟进了他们的评论。</p>
-<p>如果您只是为了查看不完整的工作而创建拉取请求，这是有意义的，如果您想要对建议的功能进行早期反馈，请鼓励您使用前缀开始拉取请求的标题<code>WIP:</code>。这将告诉维护者不要合并拉取请求。当您将更多提交推送到分支时，它们会自动显示在pull请求中。当您认为工作完成后，编辑拉取请求标题以删除<code>WIP</code>前缀，然后为此效果添加注释，以便通知维护者。</p>
-<h1 id="Kaldi教程：版本概述-20分钟"><a href="#Kaldi教程：版本概述-20分钟" class="headerlink" title="Kaldi教程：版本概述(20分钟)"></a>Kaldi教程：版本概述(20分钟)</h1><p>在我们跳到示例脚本之前，让我们花一些时间来看看Kaldi发行版中还包含哪些内容。转到kaldi-1目录并列出它。有几个文件和子目录。重要的子目录是“tools /“，“src /“和“egs /“，我们将在下一节中介绍。我们将概述“tools /“和“src /“。</p>
-<h2 id="tools-目录-10分钟"><a href="#tools-目录-10分钟" class="headerlink" title="tools/目录(10分钟)"></a>tools/目录(10分钟)</h2><p>目录“tools /“是我们以各种方式安装Kaldi所依赖的东西。将目录更改为工具/并列出它。您将看到各种文件和子目录，主要是由make命令安装的东西。看起来非常快在文件INSTALL。该文件提供了有关如何安装工具的说明。</p>
-<p>最重要的子目录是OpenFst的子目录。cd到openfst /。这是指向具有版本号的实际目录的软链接。列出openfst目录。如果安装成功，将会有一个包含已安装二进制文件的bin /目录，以及一个带库的lib /目录(我们需要这两个)。最重要的代码在目录include /fst /中。如果您想深入了解Kaldi，您需要了解OpenFst。为此，最好的起点是<a href="http://www.openfst.org/" target="_blank" rel="noopener">http://www.openfst.org/</a>。</p>
-<p>现在，只需查看文件include /fst /fst.h即可。这包括一些抽象FST类型的声明。您可以看到涉及很多模板。如果您不喜欢模板，那么您可能无法理解此代码。</p>
-<p>将目录更改为bin /，或将其添加到路径中。我们将从<a href="http://www.openfst.org/twiki/bin/view/FST/FstQuickTour#CreatingFsts" target="_blank" rel="noopener">这里</a>执行一些简单的示例指令。</p>
-<p>将以下命令粘贴到shell中：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> arc format: src dest ilabel olabel [weight]</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> final state format: state [weight]</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> lines may occur <span class="keyword">in</span> any order except initial state must be first line</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> unspecified weights default to 0.0 (<span class="keyword">for</span> the library-default Weight <span class="built_in">type</span>)</span></span><br><span class="line">cat &gt;text.fst &lt;&lt;EOF</span><br><span class="line">0 1 a x .5</span><br><span class="line">0 1 b y 1.5</span><br><span class="line">1 2 c z 2.5</span><br><span class="line">2 3.5</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure>
-<p>以下命令创建符号表; 将它们粘贴到shell中。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">cat &gt;isyms.txt &lt;&lt;EOF</span><br><span class="line">&lt;eps&gt; 0</span><br><span class="line">a 1</span><br><span class="line">b 2</span><br><span class="line">c 3</span><br><span class="line">EOF</span><br><span class="line"></span><br><span class="line">cat &gt;osyms.txt &lt;&lt;EOF</span><br><span class="line">&lt;eps&gt; 0</span><br><span class="line">x 1</span><br><span class="line">y 2</span><br><span class="line">z 3</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure>
-<p>注意：要使用以下步骤，如果路径上没有当前目录，则可能需要键入：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export PATH=.:$PATH</span><br></pre></td></tr></table></figure>
-<p>接下来创建一个二进制格式的FST：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fstcompile --isymbols=isyms.txt --osymbols=osyms.txt text.fst binary.fst</span><br></pre></td></tr></table></figure>
-<p>让我们执行一个示例命令：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fstinvert binary.fst | fstcompose - binary.fst &gt; binary2.fst</span><br></pre></td></tr></table></figure>
-<p>生成的WFST，binary2.fst应该类似于binary.fst，但权重是其两倍。你可以打印出来看看：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">fstprint --isymbols=isyms.txt --osymbols=osyms.txt binary.fst</span><br><span class="line">fstprint --isymbols=isyms.txt --osymbols=osyms.txt binary2.fst</span><br></pre></td></tr></table></figure>
-<p>此示例是根据<a href="https://kaldi-asr.org/doc/www.openfst.org" target="_blank" rel="noopener">www.openfst.org上</a>提供的较长教程修改的。完成此操作后，键入以下内容进行清理：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm *.fst *.txt</span><br></pre></td></tr></table></figure>
-<h2 id="src-目录-10分钟"><a href="#src-目录-10分钟" class="headerlink" title="src/目录(10分钟)"></a>src/目录(10分钟)</h2><p>将目录更改回顶级（kaldi-1）并进入src /。列出目录。您将看到一些文件和大量子目录。看看Makefile。在顶部它设置变量SUBDIRS。这是包含代码的子目录列表。请注意，其中一些以“bin”结尾。这些是包含可执行文件的(代码和可执行文件位于同一目录中)。其他目录包含内部代码。</p>
-<p>您可以看到Makefile中的一个目标是“test”。输入“make test”。此命令进入各个子目录并在那里运行测试程序。所有测试都应该成功。如果你感到幸运，你也可以输入“make valgrind”。这与内存检查程序运行相同的测试，并且需要更长时间，但会发现更多错误。如果这不起作用，那就别忘了; 它现在并不重要。如果耗时太长，请使用ctrl-c将其停止。</p>
-<p>将目录更改为base /。看看Makefile。注意这条线</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">include ../kaldi.mk</span><br></pre></td></tr></table></figure>
-<p>每当调用子目录中的Makefile时，这行包括文件../kaldi.mk（就像C #include指令一样)。看看文件../kaldi.mk。它将包含一些与valgrind相关的规则(用于内存调试)，然后包含一些特定于系统的配置，例如CXXFLAGS等变量。查看是否有任何-O选项(例如-O0）。标志-O0和-DKALDI_PARANOID在默认情况下被禁用，因为它们会减慢速度(您可能希望启用它们以便更好地进行调试)。再看一下base /Makefile。顶部的声明“all：”告诉Make“全部”是顶级目标(因为kaldi.mk中有目标，我们不希望它们成为顶级目标)。因为“all”的依赖关系取决于后面定义的变量，我们有另一个语句(目标在default_rules.mk中定义)，我们在其中定义“all”所依赖的内容。寻找它。定义了其他几个目标，从”干净”开始。寻找他们。要使”干净”，你可以输入“make clean”。目标.valgrind不是你从命令行调用的东西; 你可以输入“make valgrind”(目标在kaldi.mk中定义)。调用所有这些目标，即键入“make clean”，并为其他目标键入相同的内容，并注意执行此操作时发出的命令。valgrind不是你从命令行调用的东西; 你可以输入“make valgrind”(目标在kaldi.mk中定义)。调用所有这些目标，即键入“make clean”，并为其他目标键入相同的内容，并注意执行此操作时发出的命令。valgrind不是你从命令行调用的东西; 你可以输入“make valgrind”(目标在kaldi.mk中定义)。调用所有这些目标，即键入“make clean”，并为其他目标键入相同的内容，并注意执行此操作时发出的命令。</p>
-<p>在base /目录的Makefile中：选择TESTFILES中列出的二进制文件之一，然后运行它。然后简要查看相应的.cc文件。数学一个是一个很好的例子(注意：这排除了Kaldi中的大多数数学函数，它们是矩阵向量相关函数，位于../matrix/)。请注意，有许多断言，使用宏KALDI_ASSERT。这些测试程序旨在在出现问题时以错误状态退出(它们不应该依赖于人工检查输出)。</p>
-<p>查看标题<a href="https://kaldi-asr.org/doc/kaldi-math_8h.html" target="_blank" rel="noopener">kaldi-math.h</a>。您将看到我们编码实践的一些元素。请注意，我们所有的本地#includes都是相对于src /目录的(所以我们#include <a href="https://kaldi-asr.org/doc/kaldi-types_8h.html" target="_blank" rel="noopener">base /kaldi-types.h</a>即使我们已经在base /目录中)。请注意，我们#define的所有宏，除了我们刚刚确定的标准值以外，都以KALDI_开头。这是为了避免将来与其他代码库发生冲突的预防措施(因为#defines不会将自己限制在kaldi名称空间中)。注意函数名称的样式：LikeThis（)。我们的风格通常基于<a href="https://google.github.io/styleguide/cppguide.html" target="_blank" rel="noopener">这一个</a>，以符合OpenFst，但也有一些差异。</p>
-<p>要查看样式的其他元素，这将有助于您理解Kaldi代码，cd到../util，并查看<a href="https://kaldi-asr.org/doc/text-utils_8h.html" target="_blank" rel="noopener">text-utils.h</a>。请注意，这些函数的输入始终是第一个，通常是const引用，而输出(或修改的输入)总是最后的，并且是指针参数。不允许将非const引用作为函数参数。如果您有兴趣，可以<a href="https://kaldi-asr.org/doc/style.html" target="_blank" rel="noopener">在</a>以后阅读更多关于编码风格的Kaldi特定元素。现在，请注意存在具有非常特定规则的编码风格。</p>
-<p>将目录更改为../gmmbin并键入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./gmm-init-model</span><br></pre></td></tr></table></figure>
-<p>它打印出用法，这可以让您对Kaldi程序的调用方式有一个通用的概念。请注意，虽然有一个-config选项可用于传递配置文件，但通常Kaldi不像HTK那样配置驱动，并且这些文件没有被广泛使用。您将看到一个-binary选项。通常，Kaldi文件格式有二进制和文本形式，-binary选项控制它们的编写方式。但是，这仅控制单个对象(例如声学模型)的编写方式。对于整个对象集合(例如，特征文件的集合)，我们将在稍后介绍一种不同的机制。类型</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./gmm-init-model &gt;/dev/null</span><br></pre></td></tr></table></figure>
-<p>你看到了什么，这告诉你Kaldi对记录类型输出的作用是什么？使用消息所在的位置与所有错误和日志消息所在的位置相同，并且有一个原因，当您开始查看脚本时，这一点应该会变得明显。</p>
-<p>要深入了解构建过程，请转到../matrix，然后键入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rm *.o</span><br><span class="line">make</span><br></pre></td></tr></table></figure>
-<p>查看传递给编译器的选项。这些最终由../kaldi.mk中设置的变量控制，而变量又由../configure决定。还要看一下在创建matrix-lib-test时传入的链接选项。您将了解它所链接的数学库(这在某种程度上取决于系统)。有关如何使用外部矩阵库的更多信息，您可以阅读<a href="https://kaldi-asr.org/doc/matrixwrap.html" target="_blank" rel="noopener">外部矩阵库</a>。</p>
-<p>将目录更改为一级(到src /)，然后查看“configure”文件。如果您熟悉automake生成的“configure”文件，您会注意到它不是其中之一。它是手工生成的。在其中搜索“makefiles /“并快速扫描出现该字符串的所有位置(例如，键入shell“less configure”，键入”/makefiles [enter]”然后键入“n”以查看后面的实例)。您将看到它在子目录“makefiles /“中使用了后缀.mk的一些文件。这些基本上是kaldi.mk的”原型”版本。查看其中一个原型，例如makefiles /cygwin.mk，以查看它们包含的各种内容。对于更可预测的系统，它只是将系统特定的makefile与makefiles /kaldi.mk.common连接起来并将其写入kaldi.mk。对于Linux，它必须做更多的调查，因为有这么多的发行版。大多数情况下，这与找到数学库的安装位置有关。如果您在构建过程中遇到问题，一种解决方案是尝试手动修改kaldi.mk。为了做到这一点，你应该理解Kaldi如何利用外部数学库(参见<a href="https://kaldi-asr.org/doc/matrixwrap.html" target="_blank" rel="noopener">外部矩阵库</a>)。</p>
-<h1 id="运行示例脚本-40分钟"><a href="#运行示例脚本-40分钟" class="headerlink" title="运行示例脚本(40分钟)"></a>运行示例脚本(40分钟)</h1><h2 id="须知"><a href="#须知" class="headerlink" title="须知"></a>须知</h2><p>本教程的下一个阶段是开始运行资源管理的示例脚本。将目录更改为顶级(我们称之为kaldi-1），然后cd到egs/。查看该目录中的README.txt文件，并特别查看“Resource Management”部分。它提到了与语料库相对应的LDC(Linguistic Data Consortium)目录号。这可以帮助您从最不发达国家获取数据。如果由于某种原因无法获取数据，只需继续阅读本教程并执行您可以在没有数据的情况下执行的步骤，您仍然可以从中获取一些值。最好的情况是你的系统上有一些目录，比如/export /corpora5 /LDC /LDC93S3A /rm_comp，它包含三个子目录; 称他们为rm1_audio1，rm1_audio2和rm2_audio。这些将对应于LDC数据分发中的三个原始磁盘。这些说明假设您的shell是bash。如果你有一个不同的shell，这些命令将无法运行或应该被修改(只需键入“bash”进入bash，一切都能用)。</p>
-<p>现在将目录cd到rm/，浏览文件README.txt以查看整体结构是什么，并cd到s5/。这是与工具包第5版中的主要功能相对应的基本实验序列。</p>
-<p>在s5 /中，列出目录并浏览RESULTS文件，这样你就可以了解其中的内容(稍后，你应该验证你得到的结果与那里的结果相似)。我们将要查看的主要文件是run.sh. 注意：run.sh不能直接从shell运行; 我的想法是你手动逐个运行里面的命令。</p>
-<h2 id="数据准备"><a href="#数据准备" class="headerlink" title="数据准备"></a>数据准备</h2><p>我们首先需要配置作业是需要在本地运行还是在Oracle GridEngine上运行。有关如何执行此操作的说明位于cmd.sh中。</p>
-<p>如果未安装GridEngine，或者如果要在较小的数据集上运行实验，请在shell上执行以下命令。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">train_cmd="run.pl"</span><br><span class="line">decode_cmd="run.pl"</span><br></pre></td></tr></table></figure>
-<p>如果确实安装了GridEngine，则应使用queue.pl文件，该文件带有指定GridEngine所在位置的参数。在这种情况下，您将执行以下命令(参数-q是一个示例，您可能希望将其替换为GridEngine详细信息)</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">train_cmd="queue.pl -q all.q@a*.clsp.jhu.edu"</span><br><span class="line">decode_cmd="queue.pl -q all.q@[ah]*.clsp.jhu.edu"</span><br></pre></td></tr></table></figure>
-<p>下一步是从RM语料库创建测试和训练集。为此，请在shell上运行以下命令(假设您的数据位于/export /corpora5 /LDC /LDC93S3A /rm_comp中)：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">local/rm_data_prep.sh /export/corpora5/LDC/LDC93S3A/rm_comp</span><br></pre></td></tr></table></figure>
-<p>如果这样做，它应该说：“RM_data_prep succeeded”。如果没有，您将不得不找出脚本失败的地方以及问题所在。</p>
-<p>现在列出当前目录的内容，您应该看到创建了一个名为“data”的新目录。进入新创建的数据目录并列出内容。您应该看到三种主要类型的文件夹：</p>
-<ul>
-<li>local：包含当前数据的字典。</li>
-<li>train：从语料库中分割出的数据用于培训目的。</li>
-<li>test_ *：为了测试目的从语料库中分割的数据。</li>
-</ul>
-<p>让我们花一些时间实际查看创建的数据文件。这可以让您深入了解Kaldi如需要怎样的输入数据。(有关详细信息，请参阅：<a href="https://kaldi-asr.org/doc/data_prep.html" target="_blank" rel="noopener">详细数据准备指南</a>)</p>
-<p>本地目录：假设您在数据目录中，请执行以下命令：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd local/dict</span><br><span class="line">head lexicon.txt</span><br><span class="line">head nonsilence_phones.txt</span><br><span class="line">head silence_phones.txt</span><br></pre></td></tr></table></figure>
-<p>这些将使您了解通用数据准备过程的输出结果。值得庆幸的的是，并非所有这些文件都是Kaldi”专用”格式，即并非所有这些文件都可以被Kaldi的C ++程序读取，需要在使用OpenFST工具之前使用OpenFST工具进行处理。</p>
-<ul>
-<li>lexicon.txt：词库文件。</li>
-<li>* silence * .txt：这些文件包含有关哪些phones是静音而哪些没有静音的相关信息。</li>
-</ul>
-<p>现在返回数据目录并将目录更改为/train。然后执行以下命令以查看此目录中文件的输出：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">head text</span><br><span class="line">head spk2gender</span><br><span class="line">head spk2utt</span><br><span class="line">head utt2spk</span><br><span class="line">head wav.scp</span><br></pre></td></tr></table></figure>
-<ul>
-<li>text - 此文件包含将由Kaldi使用的声音和声音ID之间的映射。此文件将被转换为为整数格式 - 仍为文本文件，但单词被替换为整数。</li>
-<li>spk2gender - 此文件包含发言者与其性别之间的映射。这也是参与训练的唯一用户列表。</li>
-<li>spk2utt - 这是说话者标识符和与说话者相关的所有话语标识符之间的映射。</li>
-<li>utt2spk - 这是话语ID和相应的说话者标识符之间的一对一映射。</li>
-<li>wav.scp - 这个文件实际上是由Kaldi程序在进行特征提取时读取的。再看一下这个文件。它被解析为一组键值对，其中键是每行上的第一个字符串。该值是一种”扩展文件名”，您可以猜测它是如何工作的。因为它是用于读取，所以我们将这种类型的字符串称为“rxfilename”(对于写入，我们使用wxfilename）。如果您很好奇，请参阅<a href="https://kaldi-asr.org/doc/io.html#io_sec_xfilename" target="_blank" rel="noopener">扩展文件名：rxfilenames和wxfilenames</a>。请注意，虽然我们使用扩展名.scp，但这不是HTK意义上的脚本文件(即它不被视为命令行参数的扩展)。</li>
-</ul>
-<p>train文件夹和test_ *文件夹的结构是相同的。然而，列车数据的大小明显大于测试数据。您可以通过返回数据目录并执行以下命令来验证这一点，该命令将为训练和测试集提供字数：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wc train/text test_feb89/text</span><br></pre></td></tr></table></figure>
-<p>下一步是创建Kaldi使用的原始语料文件。在大多数情况下，这些将是整数格式的文本文件。确保您回到s5目录并执行以下命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">utils/prepare_lang.sh data/local/dict &apos;!SIL&apos; data/local/lang data/lang</span><br></pre></td></tr></table></figure>
-<p>这将在本地文件夹中创建一个名为lang的新文件夹，其中包含描述相关语言的FST。看看剧本。它将一些在data /中创建的文件转换为Kaldi读取的更规范化的形式。此脚本在data /lang /目录中创建其输出。我们下面提到的文件将在该目录中。</p>
-<p>此脚本创建的前两个文件称为words.txt和phones.txt（均在目录data /lang /中)。这些是OpenFst格式符号表，表示从字符串到整数和向后的映射。看看这些文件; 因为它们很重要并且会经常使用，所以你需要了解它们中的内容。它们的格式与我们之前在<a href="https://kaldi-asr.org/doc/tutorial_looking.html" target="_blank" rel="noopener">分发概述中</a>遇到的符号表格式相同。</p>
-<p>查看带有后缀.csl的文件(在data /lang /phones中)。这些是以冒号分隔的非静音和静音声道的整数id列表。它们有时需要作为程序命令行的选项(例如，指定静音声道列表)以及其他用途。</p>
-<p>看看phones.txt（在data /lang /中)。此文件是声道符号表，它还处理标准FST配方中使用的”消歧符号”。这些符号通常称为＃1，＃2等; 参见文章<a href="http://www.cs.nyu.edu/~mohri/pub/hbka.pdf" target="_blank" rel="noopener">“加权有限状态传感器的语音识别”</a>。我们还添加了符号＃0，它取代了语言模型中的epsilon过渡; 有关更多信息，请参阅<a href="https://kaldi-asr.org/doc/graph.html#graph_disambig" target="_blank" rel="noopener">消歧符号</a>。有多少消歧符号？在一些配方中，消歧符号的数量与共享相同发音的最大字数相同。在我们的食谱中还有一些; 你可以<a href="https://kaldi-asr.org/doc/graph.html#graph_disambig" target="_blank" rel="noopener">在这里</a>找到更多解释。</p>
-<p>文件L.fst是FST格式的编译词典。要查看其中包含哪些信息，您可以(从s5 /)执行：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fstprint --isymbols=data/lang/phones.txt --osymbols=data/lang/words.txt data/lang/L.fst | head</span><br></pre></td></tr></table></figure>
-<p>如果bash找不到命令fstprint，则需要将OpenFST的安装路径添加到PATH环境varible中。只需运行脚本path.sh即可：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">. ./path.sh</span><br></pre></td></tr></table></figure>
-<p>下一步是使用上一步中创建的文件创建描述语言语法的FST。为此，请返回目录s5并执行以下命令：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">local/rm_prepare_grammar.sh</span><br></pre></td></tr></table></figure>
-<p>如果成功，则应返回”成功为RM准备语法”的消息。将在/data /lang中创建一个名为G.fst的新文件。</p>
-<h2 id="特征提取"><a href="#特征提取" class="headerlink" title="特征提取"></a>特征提取</h2><p>下一步是提取培训功能。在run.sh中搜索“mfcc”并运行相应的三行脚本(您必须先确定要放置这些功能的位置并相应地修改示例)。确保您决定放置功能的目录有很大的空间。假设我们决定将这些功能放在/my /disk /rm_mfccdir上，我们会做类似的事情：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">export featdir=/my/disk/rm_mfccdir</span><br><span class="line"><span class="meta">#</span><span class="bash"> make sure featdir exists and is somewhere you can write.</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> can be <span class="built_in">local</span> <span class="keyword">if</span> you want.</span></span><br><span class="line">mkdir $featdir</span><br><span class="line">for x in test_mar87 test_oct87 test_feb89 test_oct89 test_feb91 test_sep92 train; do \</span><br><span class="line">  steps/make_mfcc.sh --nj 8 --cmd "run.pl" data/$x exp/make_mfcc/$x $featdir; \</span><br><span class="line">  steps/compute_cmvn_stats.sh data/$x exp/make_mfcc/$x $featdir; \</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
-<p>运行这些工作。它们并行使用多个CPU，应该在性能还不错的机器上大约两分钟完成。您可以根据计算机的CPU数更改-nj选项(指定要运行的作业数)。查看文件exp /make_mfcc /train /make_mfcc.1.log以查看创建MFCC的程序的日志记录输出。在它的顶部，您将看到命令行（Kaldi程序将始终回显命令行，除非您指定-print-args = false）。</p>
-<p>在脚本steps /make_mfcc.sh中，查看调用split_scp.pl的行。你可能猜到这是做什么的。</p>
-<p>运行</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wc $featdir/raw_mfcc_train.1.scp </span><br><span class="line">wc data/train/wav.scp</span><br></pre></td></tr></table></figure>
-<p>来确认一下。</p>
-<p>接下来看一下调用compute-mfcc-feats的行。选项应该是相当不言自明的。涉及配置文件的选项是一种可以在Kaldi中用于传递配置选项的机制，例如HTK配置文件，但它实际上很少使用。位置参数(以“scp”和“ark，scp”开头的参数需要更多解释。</p>
-<p>在我们解释之前，再次查看脚本中的命令行并使用以下命令检查输入和输出：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">head data/train/wav.scp</span><br><span class="line">head $featdir/raw_mfcc_train.1.scp</span><br><span class="line">less $featdir/raw_mfcc_train.1.ark</span><br></pre></td></tr></table></figure>
-<p>小心 - .ark文件包含二进制数据(如果您的终端在查看后无法正常工作，则可能需要键入“reset”)。</p>
-<p>通过列出文件，您可以看到.ark文件非常大(因为它们包含实际数据)。您可以通过键入(假设您位于s5目录并运行脚本path.sh）更方便地查看其中一个存档文件：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">copy-feats ark:$featdir/raw_mfcc_train.1.ark ark,t:- | head</span><br></pre></td></tr></table></figure>
-<p>您也可以从此命令中删除”，t”修饰符，可以再次尝试 - 但将它管道化为“less”可能会很好，因为数据将是二进制的。查看相同数据的另一种方法是：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">copy-feats scp:$featdir/raw_mfcc_train.1.scp ark,t:- | head</span><br></pre></td></tr></table></figure>
-<p>这是因为这些归档文件和脚本文件都代表相同的数据(从技术上讲，归档只占其中的八分之一，因为我们将它分成八个部分)。请注意这些命令中的“scp：”和“ark：”前缀。Kaldi并不试图从数据本身中确定某些东西是脚本文件还是归档格式，事实上Kaldi从未试图从文件后缀中解决问题。这是出于一般的哲学原因，也是为了防止与管道的不良交互(因为管道通常没有名称)。</p>
-<p>现在输入以下命令：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">head -10 $featdir/raw_mfcc_train.1.scp | tail -1 | copy-feats scp:- ark,t:- | head</span><br></pre></td></tr></table></figure>
-<p>这将打印出第十个培训文件中的一些数据。请注意，在“scp： - “中，” - “表示它从标准输入读取，而“scp”告诉它将输入解释为脚本文件。</p>
-<p>接下来，我们将描述实际上的脚本和归档文件。我们要做的第一点是代码以相同的方式看到它们。有关用户级调用代码的一个特别简单的示例，请键入以下命令：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tail -30 ../../../src/featbin/copy-feats.cc</span><br></pre></td></tr></table></figure>
-<p>您可以看到该程序中实际完成工作的部分只有三行代码(实际上有两个分支，每个分支有三行代码)。如果您熟悉OpenFst中的StateIterator类型，您会注意到我们迭代的方式是相同的样式(我们尝试尽可能与OpenFst样式兼容)。</p>
-<p>底层脚本和档案是表的概念。表基本上是一组有序的项(例如特征文件)，由唯一字符串(例如话语标识符)索引。Table实际上并不是一个C ++对象，因为我们有单独的C ++对象来访问数据，这取决于我们是在编写，迭代还是进行随机访问。这些类型的示例中，有问题的对象是浮点<a href="https://kaldi-asr.org/doc/classkaldi_1_1Matrix.html" target="_blank" rel="noopener">矩阵</a>(<a href="https://kaldi-asr.org/doc/classkaldi_1_1Matrix.html" target="_blank" rel="noopener">Matrix </a>)，它是：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">BaseFloatMatrixWriter</span><br><span class="line">RandomAccessBaseFloatMatrixReader</span><br><span class="line">SequentialBaseFloatMatrixReader</span><br></pre></td></tr></table></figure>
-<p>这些类型都是typedef，它们实际上是模板化的类。我们在此不再详述。脚本(.scp）文件或存档(.ark）文件都被视为数据表。格式如下：</p>
-<ul>
-<li>.scp格式是纯文本格式，其中包含带键的行，然后是”扩展文件名”，告诉Kaldi在哪里可以找到数据。</li>
-<li>存档格式可以是文本格式或二进制格式(您可以使用”，t”修饰符以文本模式编写;默认情况下使用二进制格式)。格式是：键(例如话语id），然后是空格，然后是对象数据。</li>
-</ul>
-<p>关于脚本和档案的一些通用点：</p>
-<ul>
-<li>指定如何读取表(存档或脚本)的字符串称为rspecifier; 例如“ark：gunzip -c my /dir /foo.ark.gz |”。</li>
-<li>指定如何编写表(存档或脚本)的字符串称为wspecifier; 例如“ark，t：foo.ark”。</li>
-<li>档案可以连接在一起，仍然是有效的档案(其中没有”中央索引”)。</li>
-<li>代码可以按顺序或通过随机访问读取脚本和存档。用户级代码只知道它是在迭代还是在进行查找; 它不知道它是在访问脚本还是存档。</li>
-<li>Kaldi不会尝试在归档中表示对象类型; 你必须提前知道对象类型</li>
-<li>档案和脚本文件不能包含类型的混合。</li>
-<li>通过随机访问读取存档可能是内存效率低的，因为代码可能必须将对象缓存在内存中。</li>
-<li>为了有效随机访问存档，您可以使用“ark，scp”写入机制(例如，用于将mfcc功能写入磁盘)来写出相应的脚本文件。然后，您将通过scp文件访问它。</li>
-<li>避免代码在对档案进行随机访问时必须在内存中缓存大量内容的另一种方法是告诉代码存档已排序并将按排序顺序调用(例如“ark，s，cs： - “) 。</li>
-<li>读取和写入存档的类型是在Holder类型上模板化的，Holder类型是”知道如何”读取和写入有问题的对象的类型。</li>
-</ul>
-<p>在这里，我们刚刚给出了一个非常快速的概述，可能会提出比提供答案更多的问题; 它只是为了让您了解所涉及的问题类型。有关更多详细信息，请参阅<a href="https://kaldi-asr.org/doc/io.html" target="_blank" rel="noopener">Kaldi I /O机制</a>。</p>
-<p>为了让您了解如何在管道中使用归档和脚本文件，请键入以下命令并尝试了解发生的情况：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">head -1 $featdir/raw_mfcc_train.1.scp | copy-feats scp:- ark:- | copy-feats ark:- ark,t:- | head</span><br></pre></td></tr></table></figure>
-<p>按顺序运行这些命令并观察发生的情况可能会有所帮助。使用copy-feat，请记住将输出管道化为head，因为您可能列出了很多内容(在ark文件的情况下可能是二进制的)。</p>
-<p>最后，为方便起见，让我们将所有测试数据合并到一个目录中。我们将在这个平均步骤上进行所有测试。以下命令还将合并扬声器，负责复制和重新生成这些扬声器的统计数据，以便我们的工具不会抱怨。通过运行以下命令(从s5目录)执行此操作。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">utils/combine_data.sh data/test data/test_&#123;mar87,oct87,feb89,oct89,feb91,sep92&#125;</span><br><span class="line">steps/compute_cmvn_stats.sh data/test exp/make_mfcc/test $featdir</span><br></pre></td></tr></table></figure>
-<p>我们还创建一个训练数据的子集（train.1k），每个发言者只能保留1000个话语。我们将用于培训。通过执行以下命令执行此操作：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">utils/subset_data_dir.sh data/train 1000 data/train.1k</span><br></pre></td></tr></table></figure>
-<h2 id="单声道训练"><a href="#单声道训练" class="headerlink" title="单声道训练"></a>单声道训练</h2><p>下一步是培训单音模型。如果您安装Kaldi的磁盘不大，您可能希望将exp /软链接到大磁盘上的某个目录(如果您运行所有实验并且不进行清理，它可能会达到一些千兆字节)。类型</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup steps/train_mono.sh --nj 4 --cmd "$train_cmd" data/train.1k data/lang exp/mono &amp;</span><br></pre></td></tr></table></figure>
-<p>您可以通过键入来查看最新的输出</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tail nohup.out</span><br></pre></td></tr></table></figure>
-<p>你可以用这种方式运行更长的工作，这样即使我们断开连接它们也可以完成运行，虽然更好的办法是从”屏幕”运行你的shell，这样它就不会被杀死。实际上很少有输出符合标准输出和该脚本的错误; 其中大部分用于exp /mono /中的日志文件。</p>
-<p>在它运行时，查看文件data /lang /topo。此文件立即创建。其中一部手机的拓扑结构与其他手机不同。查看data /phones.txt，以便从数字ID中找出它是哪个手机。请注意，拓扑文件中的每个条目都具有最终状态，没有任何转换。拓扑文件中的约定是第一个状态是初始状态(概率为1），最后一个状态是最终状态(概率为1）。</p>
-<p>执行:</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gmm-copy --binary=false exp/mono/0.mdl - | less</span><br></pre></td></tr></table></figure>
-<p>并查看模型文件。在模型参数之前，您将看到它包含拓扑文件顶部的信息，然后是其他一些内容。惯例是.mdl文件包含两个对象：一个TransitionModel类型的对象，它包含拓扑信息作为HmmTopology类型的成员变量，以及一个相关模型类型的对象(在本例中，类型为AmGmm）。通过”包含两个对象”，我们的意思是对象具有标准形式的Write和Read函数，我们将这些函数称为将对象写入文件。对于像这样的对象，它不是表的一部分(即没有涉及“ark：”或“scp：”)，写入是二进制或文本模式，可以通过标准命令行选项-binary = true或-binary = false控制(不同的程序具有不同的默认值)。对于表(即归档和脚本)，二进制或文本模型由说明符中的”，t”选项控制。</p>
-<p>浏览模型文件以查看它包含的信息类型。在这一点上，我们不会详细介绍如何在Kaldi中表示模型; 请参阅<a href="https://kaldi-asr.org/doc/hmm.html" target="_blank" rel="noopener">HMM拓扑和过渡建模</a>以了解更多信息。</p>
-<p>我们将提到一个重要的观点：Kaldi中的pdf由数字id表示，从零开始(我们称之为pdf-id）。他们没有像HTK那样的”名字”。.mdl文件没有足够的信息来映射依赖于上下文的声道和pdf-id。有关该信息，请参阅树文件：执行</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">copy-tree --binary=false exp/mono/tree - | less</span><br></pre></td></tr></table></figure>
-<p>请注意，这是一个单音”树”，所以它非常简单 - 它没有任何”分裂”。虽然这种树格式并不是人类可读的，但我们收到了一些关于树格式的查询，因此我们将对其进行解释。本段的其余部分可以由随意的读者跳过。在“ToPdf”之后，树文件包含多态类型EventMap的对象，可以将其视为存储从表示上下文中的声道和HMM状态的一组整数(键，值)对的映射到数字pdf id。派生自EventMap的类型是ConstantEventMap（表示树的叶子)，TableEventMap（表示某种查找表)和SplitEventMap（表示树分割)。在此文件exp /mono /tree中，“CE” 是ConstantEventMap的标记(并且对应于树的叶子)，“TE”是TableEventMap的标记(没有“SE”或SplitEventMap，因为这是单声道情况)。“TE 0 49”是TableEventMap的开始，它在键零上”分裂”(表示长度为1的声道上下文向量中的第零个声道位置，对于单声道情况)。在括号中，它遵循49个EventMap类型的对象。第一个是NULL，表示指向EventMap的零指针，因为phone-id为零保留为“epsilon”。非NULL对象的示例是字符串“TE-3（CE 33 CE 34 CE 35）”，其表示在键-1上分割的TableEventMap。此键表示拓扑文件中指定的PdfClass，在我们的示例中，它与HMM状态索引相同。</p>
-<p>现在看一下文件exp /mono /ali.1.gz（如果培训进展得足够的话，它应该存在)：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">copy-int-vector "ark:gunzip -c exp/mono/ali.1.gz|" ark,t:- | head -n 2</span><br></pre></td></tr></table></figure>
-<p>这是训练数据的维特比对齐; 每个培训文件都有一行。现在再看一下exp /mono /tree（如上所述)并查找编号最高的pdf id（这是文件中的最后一个数字)。将其与exp /mono /ali.1.gz中的数字进行比较。有什么事吗？对齐中的数字太大。原因是对齐文件不包含pdf id。它包含一个稍微细粒度的标识符，我们称之为“transition-id”。这也编码了手机和手机原型拓扑中的过渡。出于多种原因，这很有用。如果你想要解释一个特定的transition-id是什么(例如你正在看cur.ali中的一个对齐，你看到一个重复很多，你想知道为什么)，你可以使用该程序”</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show-transitions data /lang /phones.txt exp /mono /0.mdl</span><br></pre></td></tr></table></figure>
-<p>如果你有一个带有占用计数的文件(一个名为* .occs的文件)，你可以将它作为第二个参数给出，它会显示更多信息。</p>
-<p>要以更人性化的形式查看对齐方式，请尝试以下操作：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show-alignments data/lang/phones.txt exp/mono/0.mdl "ark:gunzip -c exp/mono/ali.1.gz |" | less</span><br></pre></td></tr></table></figure>
-<p>有关HMM拓扑，transition-id，转换建模等内容的更多详细信息，请参阅<a href="https://kaldi-asr.org/doc/hmm.html" target="_blank" rel="noopener">HMM拓扑和转换建模</a>。</p>
-<p>接下来让我们看一下培训的进展情况(这一步假设你的shell是bash）。类型</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep Overall exp/mono/log/acc.&#123;?,??&#125;.&#123;?,??&#125;.log</span><br></pre></td></tr></table></figure>
-<p>您可以在每次迭代中看到声学可能性。接下来查看其中一个文件exp /mono /log /update。*。log以查看更新日志中的信息类型。</p>
-<p>当单声道训练结束时，我们可以测试单声道解码。在解码之前，我们必须创建解码图。输入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">utils/mkgraph.sh --mono data/lang exp/mono exp/mono/graph</span><br></pre></td></tr></table></figure>
-<p>查看utils /mkgraph.sh调用的程序。其中许多名称以“fst”开头(例如fsttablecompose），其中大部分程序实际上并非来自OpenFst发行版。我们创建了一些自己的FST操作程序。您可以按如下方式找到这些程序的位置。获取在utils /mkgraph.sh中调用的任意程序(例如，fstdeterminizestar）。然后输入：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">which fstdeterminizestar</span><br></pre></td></tr></table></figure>
-<p>我们有不同版本的程序的原因主要是因为我们在语音识别中使用FST略有不同(较少的AT＆T-ish）方式。例如，“fstdeterminizestar”对应于”经典”确定，其中我们删除epsilon弧。有关详细信息，请参阅<a href="https://kaldi-asr.org/doc/graph.html" target="_blank" rel="noopener">Kaldi中的解码图构造</a>。在图形创建过程之后，我们可以启动单声道解码：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">steps/decode.sh --config conf/decode.config --nj 20 --cmd "$decode_cmd" \</span><br><span class="line">  exp/mono/graph data/test exp/mono/decode</span><br></pre></td></tr></table></figure>
-<p>要查看一些解码输出</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">less exp/mono/decode/log/decode.2.log</span><br></pre></td></tr></table></figure>
-<p>你可以看到它将成绩单放在屏幕上。转录本的文本形式仅出现在日志信息中：该程序的实际输出显示在文件exp /mono /decode /scoring /2.tra中。这些tra文件中的数字表示用于解码过程的语言模型（LM）标度。这里我们默认使用LM刻度等于2到13（有关详细信息，请参阅local /score.sh）。要从tra文件中查看实际解码的单词序列(以2.tra为例)，请键入：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">utils/int2sym.pl -f 2- data/lang/words.txt exp/mono/decode/scoring/2.tra</span><br></pre></td></tr></table></figure>
-<p>有一个名为sym2int.pl的相应脚本。您可以通过键入以下内容将其转换回整数形式：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">utils/int2sym.pl -f 2- data/lang/words.txt exp/mono/decode/scoring/2.tra | \</span><br><span class="line"> utils/sym2int.pl -f 2- data/lang/words.txt</span><br></pre></td></tr></table></figure>
-<p>该<code>-f 2-</code>选项是这样的，它不会尝试将话语id转换为整数。接下来，尝试做</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tail exp/mono/decode/log/decode.2.log</span><br></pre></td></tr></table></figure>
-<p>它将在最后打印出一些有用的摘要信息，包括实时因子和每帧的平均对数似然。实时因子通常约为0.2至0.3（即比实时更快)。这取决于您的CPU，机器上有多少个工作以及其他因素。此脚本并行运行20个作业，因此如果您的计算机少于20个核心，则可能要慢得多。请注意，我们使用相当宽的光束(20），以获得准确的结果; 在典型的LVCSR设置中，光束将小得多(例如，大约13）。</p>
-<p>再次查看日志文件的顶部，并专注于命令行。可选参数位于位置参数之前(这是必需的)。类型</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gmm-decode-faster</span><br></pre></td></tr></table></figure>
-<p>查看用法消息，并将参数与您在日志文件中看到的内容进行匹配。回想一下，“rspecifier”是指定如何读取表的字符串之一，“wspecifier”指定如何编写表。仔细看看这些论点，并试着找出它们的含义。查看与功能对应的rspecifier，并尝试理解它(这个内部有空格，因此Kaldi用它周围的单引号打印出来，以便您可以将其粘贴到shell中，程序将按预期运行)。</p>
-<p>单声道系统现已完成，我们将在下一步教程中进行三音素训练和解码。</p>
-<h1 id="阅读和修改源码-半小时"><a href="#阅读和修改源码-半小时" class="headerlink" title="阅读和修改源码(半小时)"></a>阅读和修改源码(半小时)</h1><p>当triphone系统构建正在运行时，我们将花一些时间来浏览代码的某些部分。您将从本教程的这一部分中获得的主要内容是如何组织代码以及依赖结构是什么的一些想法; 以及修改和调试代码的一些经验。如果您想更深入地理解代码，我们建议您按照<a href="https://kaldi-asr.org/doc/index.html" target="_blank" rel="noopener">主文档页面</a>上的链接进行操作，我们将按主题组织更详细的文档。</p>
-<h2 id="常用工具"><a href="#常用工具" class="headerlink" title="常用工具"></a>常用工具</h2><p>转到顶级目录(我们称之为kaldi-1）然后转到src /。首先看一下文件<a href="https://kaldi-asr.org/doc/kaldi-common_8h.html" target="_blank" rel="noopener">库/kaldi-common.h</a>(不要按照本文档中的链接;从shell或编辑器中查看)。＃包含了几乎所有Kaldi程序使用的base /目录中的一些内容。您可以从文件名中猜测所提供的事物类型：错误记录宏，typedef，数学效用函数(如随机数生成)和杂项#defines。但这是一套精简的公用事业; 在<a href="https://kaldi-asr.org/doc/common-utils_8h.html" target="_blank" rel="noopener">util /common-utils.h中</a>有一个更完整的集合，包括命令行解析和处理扩展文件名(如管道)的I /O函数。花几秒钟浏览一下<a href="https://kaldi-asr.org/doc/common-utils_8h.html" target="_blank" rel="noopener">util /common-utils.h</a>并看看#includes。我们将一部分实用程序隔离到base /目录中的原因是为了最大限度地减少矩阵/目录的依赖性(这本身就很有用); matrix /目录仅取决于base /目录。查看matrix /Makefile并搜索base /以查看如何指定。在Makefile中查看此类规则可以让您深入了解工具包的结构。</p>
-<h2 id="矩阵库-以及修改和调试代码"><a href="#矩阵库-以及修改和调试代码" class="headerlink" title="矩阵库(以及修改和调试代码)"></a>矩阵库(以及修改和调试代码)</h2><p>现在看一下文件<a href="https://kaldi-asr.org/doc/matrix-lib_8h.html" target="_blank" rel="noopener">matrix /matrix-lib.h</a>。查看它包含的文件。这提供了矩阵库中各种事物的概述。这个库基本上是BLAS和LAPACK的C ++包装器，如果这对您来说意味着什么(如果没有，请不要担心)。文件<a href="https://kaldi-asr.org/doc/sp-matrix_8h.html" target="_blank" rel="noopener">sp-matrix.h</a>和<a href="https://kaldi-asr.org/doc/tp-matrix_8h.html" target="_blank" rel="noopener">tp-matrix.h分别</a>涉及对称打包矩阵和三角打包矩阵。快速扫描文件<a href="https://kaldi-asr.org/doc/kaldi-matrix_8h.html" target="_blank" rel="noopener">矩阵/kaldi-matrix.h</a>。这将让您了解矩阵代码的外观。它由表示矩阵的C ++类组成。我们在<a href="https://kaldi-asr.org/doc/matrix.html" target="_blank" rel="noopener">这里</a>提供矩阵库的迷你教程， 如果你感兴趣。您可能会注意到代码中看起来像一个奇怪的注释样式，注释以三个斜杠(///)开头。这些类型的表扬和阻止评论开头</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br></pre></td></tr></table></figure>
-<p>，由自动生成文档的Doxygen软件解释。它还会生成您正在阅读的页面(此类文档的源代码位于src /doc /中)。</p>
-<p>此时我们希望您修改代码并进行编译。我们将在文件<a href="https://kaldi-asr.org/doc/matrix-lib-test_8cc.html" target="_blank" rel="noopener">矩阵/matrix-lib-test.cc中</a>添加一个测试函数。如前所述，如果出现问题，测试程序将被设计为以非零状态中止或退出。</p>
-<p>我们将为函数Vector :: AddVec添加一个测试例程。此函数将一个向量的常量时间添加到另一个向量。阅读下面的代码并尝试尽可能多地了解它(小心：我们故意在代码中插入两个错误)。如果您不熟悉模板，理解它可能会很困难。我们尽量避免使用模板，因此在不知道模板编程的情况下，Kaldi的大部分仍然是可以理解的。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">Real</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">void</span> <span class="title">UnitTestAddVec</span>() &#123;</span></span><br><span class="line"><span class="comment">//note: Real will be float or double when instantiated.</span></span><br><span class="line">  int32 dim = <span class="number">1</span> + Rand() % <span class="number">10</span>;</span><br><span class="line">  Vector&lt;Real&gt; v(dim); w(dim); <span class="comment">//two vectors the same size.</span></span><br><span class="line">  v.SetRandn();</span><br><span class="line">  w.SetRandn();</span><br><span class="line">  Vector&lt;Real&gt; w2(w); <span class="comment">//w2 is a copy of w.</span></span><br><span class="line">  Real f = RandGauss();</span><br><span class="line">  w.AddVec(f, v); <span class="comment">//w &lt;-- w + f v</span></span><br><span class="line">  <span class="keyword">for</span> (int32 i = <span class="number">0</span>; i &lt; dim; i++) &#123;</span><br><span class="line">    Real a = w(i), b = f * w2(i) + v(i);</span><br><span class="line">    AssertEqual(a, b); <span class="comment">//will crash if not equal to within</span></span><br><span class="line"> <span class="comment">//a tolerance.</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>将此代码添加到文件<a href="https://kaldi-asr.org/doc/matrix-lib-test_8cc.html" target="_blank" rel="noopener">matrix-lib-test.cc中</a>，就在函数<a href="https://kaldi-asr.org/doc/namespacekaldi.html#a8a7376886f24285335b904248d9b9e38" target="_blank" rel="noopener">MatrixUnitTest（)的</a>上方。然后，在<a href="https://kaldi-asr.org/doc/namespacekaldi.html#a8a7376886f24285335b904248d9b9e38" target="_blank" rel="noopener">MatrixUnitTest（)内</a>，添加以下行：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UnitTestAddVec&lt;Real&gt;();</span><br></pre></td></tr></table></figure>
-<p>在您添加此功能的位置无关紧要。然后输入“make test”。应该有一个错误(分号应该是逗号); 修复它，然后再试一次。现在输入”./matrix-lib-test”。这应该会因断言失败而崩溃，因为单元测试代码中还有另一个错误。接下来我们将调试它。类型</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gdb ./matrix-lib-test</span><br></pre></td></tr></table></figure>
-<p>(如果你在cygwin上，你现在应该输入gdb提示符，“break __assert_func”)。输入“r”。当它崩溃时，它会调用abort（)，它会被调试器捕获。键入“bt”以查看堆栈跟踪。通过键入“up”来填充堆栈，直到您进入测试功能。当你在正确的地方，你应该看到如下输出：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#5  0x080943cf in kaldi::UnitTestAddVec&lt;float&gt; () at matrix-lib-test.cc:2568</span><br><span class="line">2568	    AssertEqual(a, b); //will crash if not equal to within</span><br></pre></td></tr></table></figure>
-<p>如果你走得太远，你可以输入”向下”。然后键入“p a”和“p b”以查看a和b的值(“p”是“print”的缩写)。你的屏幕应该看起来像这样：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">(gdb) p a</span><br><span class="line">$5 = -0.931363404</span><br><span class="line">(gdb) p b</span><br><span class="line">$6 = -0.270584524</span><br><span class="line">(gdb)</span><br></pre></td></tr></table></figure>
-<p>当然，确切的值是随机的，对您而言可能有所不同。由于数字有很大不同，很明显，这不仅仅是容差错误的问题。通常，您可以使用“print”表达式从调试器访问任何类型的表达式，但括号运算符(表达式如“v（i）”)不起作用，因此要查看向量内的值，您必须输入表达式如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">(gdb) p v.data_[0]</span><br><span class="line">$8 = 0.281656802</span><br><span class="line">(gdb) p w.data_[0]</span><br><span class="line">$9 = -0.931363404</span><br><span class="line">(gdb) p w2.data_[0]</span><br><span class="line">$10 = -1.07592916</span><br><span class="line">(gdb)</span><br></pre></td></tr></table></figure>
-<p>这可能会帮助您确定“b”的表达式是错误的。将其修复在代码中，重新编译并再次运行(您只需在gdb提示符中键入“r”即可重新运行)。它现在应该运行正常。强制gdb在以前失败的位置进入代码，这样你就可以再次检查表达式的值，看看现在的情况是否正常。要使调试器中断，您必须设置断点。计算出断言失败的行号(在UnitTestAddVec（)中的某个地方)，然后键入gdb，如下所示：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(gdb) b matrix-lib-test.cc:2568</span><br><span class="line">Breakpoint 1 at 0x80943b4: file matrix-lib-test.cc, line 2568. (4 locations)</span><br></pre></td></tr></table></figure>
-<p>然后运行程序(键入“r”)，当它在那里中断时，使用“p”命令查看表达式的值。要继续，请键入“c”。它会一直停在那里，因为它在一个循环内。键入“d 1”以删除断点(假设它是第一个断点)，并键入“c”继续。程序应该运行到最后。输入“q”退出调试器。如果需要调试带有命令行参数的程序，可以这样做：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">gdb --args kaldi-program arg1 arg2 ...</span><br><span class="line">(gdb) r</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-<p>或者您可以不带参数调用gdb，然后在提示符下键入“r arg1 arg2 …”。</p>
-<p>完成后，编译，键入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git diff</span><br></pre></td></tr></table></figure>
-<p>看看你做了哪些改变。如果您正在为Kaldi项目做出贡献并计划在不久的将来向我们发送代码，您可能希望将它们提交到分支中，如下所述，以便您可以在以后生成干净的<a href="https://help.github.com/articles/using-pull-requests/" target="_blank" rel="noopener">GitHub拉取请求</a>。我们建议您熟悉Git分支，即使您没有直接提供更改; Git是一个强大的工具，可以维护您的本地代码更改以及您可能贡献的更改。</p>
-<h2 id="声学建模代码"><a href="#声学建模代码" class="headerlink" title="声学建模代码"></a>声学建模代码</h2><p>接下来看<a href="https://kaldi-asr.org/doc/diag-gmm_8h.html" target="_blank" rel="noopener">gmm /diag-gmm.h</a>(这个类存储高斯混合模型)。DiagGmm类可能看起来有点混乱，因为它有许多不同的访问器功能。搜索”私有”并查看类成员变量(它们总是以下划线结尾，按照Kaldi风格)。这应该清楚我们如何存储GMM。这只是一个GMM，而不是GMM的整个集合。看看<a href="https://kaldi-asr.org/doc/am-diag-gmm_8h.html" target="_blank" rel="noopener">gmm /am-diag-gmm.h</a>; 这个类存储了一组GMM。请注意，它不会从任何东西继承。搜索”私有”，您可以看到成员变量(只有两个)。你可以从中理解这个类是多么简单(其他一切都包含各种访问器和便利功能)。一个自然要问的问题是：转换在哪里，决策树在哪里，HMM拓扑在哪里？所有这些都与声学模型分开，因为研究人员可能希望在保持系统其余部分相同的同时替换声学可能性。我们稍后会谈到其他的东西。</p>
-<h2 id="特征提取代码"><a href="#特征提取代码" class="headerlink" title="特征提取代码"></a>特征提取代码</h2><p>接下来看一下<a href="https://kaldi-asr.org/doc/feature-mfcc_8h.html" target="_blank" rel="noopener">feat /feature-mfcc.h</a>。专注于MfccOptions结构。结构成员可以让您了解MFCC特征提取支持哪种选项。请注意，某些struct成员本身就是选项结构。查看Register函数。这是Kaldi选项课程的标准。然后查看<a href="https://kaldi-asr.org/doc/compute-mfcc-feats_8cc.html" target="_blank" rel="noopener">featbin /compute-mfcc-feats.cc</a>(这是一个命令行程序)并搜索Register。您可以看到options结构的Register函数的调用位置。要查看MFCC特征提取支持的选项的完整列表，请执行不带参数的程序featbin /compute-mfcc-feats。回想一下，您看到其中一些选项在MfccOptions类中注册，其他选项在<a href="https://kaldi-asr.org/doc/compute-mfcc-feats_8cc.html" target="_blank" rel="noopener">featbin /compute-mfcc-feats.cc</a>中注册。指定选项的方法是-option = value。类型</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">featbin/compute-mfcc-feats ark:/dev/null ark:/dev/null</span><br></pre></td></tr></table></figure>
-<p>这应该成功运行，因为它将/dev /null解释为空存档。您可以尝试使用此示例设置选项。例如，尝试一下</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">featbin/compute-mfcc-feats --raw-energy=false ark:/dev/null ark:/dev/null</span><br></pre></td></tr></table></figure>
-<p>您从中获得的唯一有用信息是它不会崩溃; 尝试删除”=”符号或缩写选项名称或更改参数数量，并查看它失败并打印用法消息。</p>
-<h2 id="声学决策树和HMM拓扑代码"><a href="#声学决策树和HMM拓扑代码" class="headerlink" title="声学决策树和HMM拓扑代码"></a>声学决策树和HMM拓扑代码</h2><p>接下来看一下<a href="https://kaldi-asr.org/doc/build-tree_8h.html" target="_blank" rel="noopener">tree /build-tree.h</a>。找到BuildTree函数。这是构建决策树的主要顶级功能。请注意，它返回一个类型为EventMap的指针。这是一种将一组(键，值)对中的函数存储到整数的类型。它在<a href="https://kaldi-asr.org/doc/event-map_8h.html" target="_blank" rel="noopener">tree /event-map.h中</a>定义。键和值都是整数，但键表示语音上下文位置(通常为0,1或2），值表示声道。还有一个特殊键-1，大致代表HMM中的位置。转到实验目录(../egs/rm/s5），我们将看看如何构建树。BuildTree函数的主要输入是BuildTreeStatsType类型，它是一个typedef，如下所示：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">typedef vector&lt;pair&lt;EventType, Clusterable*&gt; &gt; BuildTreeStatsType;</span><br></pre></td></tr></table></figure>
-<p>这里，EvenType是以下typedef：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">typedef vector&lt;pair&lt;EventKeyType, EventValueType&gt; &gt; EventType;</span><br></pre></td></tr></table></figure>
-<p>EventType表示一组(键，值)对，例如典型的一对<code>{ { -1,1 }，{ 0,15 }，{ 1,21 }，{ 2,38 } }</code>代表声道21电话15的左上下文，声道38的右上下文和“pdf-class”1（在正常情况下意味着它处于状态编号1，其是三个状态的中间)。Clusterable *指针是一个指向虚拟类的指针，该虚拟类具有通用接口，支持将统计数据添加到一起并评估某种目标函数(例如可能性)等操作。在正常的配方中，它实际上指向一个包含足够的统计数据来估计对角高斯pdf的类。</p>
-<p>执行</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">less exp/tri1/log/acc_tree.log</span><br></pre></td></tr></table></figure>
-<p>此文件中没有太多信息，但您可以看到命令行。该程序为每个看到的三音素上下文的每个HMM状态(实际上是pdf类)累积单高斯统计。这些<code>–ci-phones</code>选项使得它知道避免为不同的手机上下文累积单独的统计信息，例如我们不希望依赖于上下文的沉默(这是一种优化;没有这个选项就可以工作)。这个程序的输出可以被认为是上面讨论的BuildTreeStatsType类型，虽然为了阅读它，我们必须知道它是什么具体类型。</p>
-<p>执行</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">less exp/tri1/log/train_tree.log</span><br></pre></td></tr></table></figure>
-<p>该程序执行决策树聚类; 它读取输出的统计信息。它基本上是上面讨论的BuildTree函数的包装器。它在决策树聚类中提出的问题会自动生成，您可以在脚本steps /train_tri1.sh中查看(查找程序cluster-phones和compile-questions）。</p>
-<p>接下来看看<a href="https://kaldi-asr.org/doc/hmm-topology_8h.html" target="_blank" rel="noopener">hmm /hmm-topology.h</a>。HmmTopology类为许多声道定义了一组HMM拓扑。通常，每个声道可以具有不同的拓扑结构。拓扑包括用于初始化的”默认”转换。查看标题顶部的扩展注释中的示例拓扑。有一个标签 <code>&lt;PdfClass&gt;</code>（注意：与HTK文本格式一样，这个文件看起来像模糊的XML，但它不是真正的XML）。<code>&lt;PdfClass&gt;</code>始终与此处的HMM状态(<code>&lt;State&gt;</code>）相同; 一般来说，它不一定是。这是一种强制在不同HMM状态之间进行分配的机制; 如果您想要创建更有趣的过渡模型，它可能很有用。</p>
-
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/05/12/kaldi指南/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
           
+          <!--/noindex-->
         
       
     </div>
@@ -2205,6 +1996,25 @@
                 </div>
               
 
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
               
 
               
