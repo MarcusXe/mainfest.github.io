@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="异常(Exception)1. SYSTEM EXCEPTION12345678910DECLARESTU STUDENT%ROWTYPE;BEGINSELECT * INTO STUFROM STUDENT WHERE SNO=&apos;201901&apos;;DBMS_OUTPUT.PUT_LINE(STU.SNAME||&apos;,&apos;||STU.SNO);EXCEPTIONWHEN NO_DATA_FOUND TH">
+  <meta name="description" content="同义词(Synonym) 通过同义词可以给表、索引、视图等数据库对象创建一个别名， 来隐藏一些信息，提供一定的安全性   当DBA改变数据库对象的名称时，通过同义词可以避免前台应 用程序的改变   同义词分公有和私有，公有同义词每个用户都能使用，私有同义 词必须具有访问权限的用户才能使  格式 创建  1CREATE [OR REPLACE] [PUBLIC]SYNONYM &amp;lt;同义词名">
 <meta name="keywords" content="OracleDB">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Oracle数据库">
 <meta property="og:url" content="http://yoursite.com/2019/05/09/Oracle数据库/index.html">
 <meta property="og:site_name" content="Xeby">
-<meta property="og:description" content="异常(Exception)1. SYSTEM EXCEPTION12345678910DECLARESTU STUDENT%ROWTYPE;BEGINSELECT * INTO STUFROM STUDENT WHERE SNO=&apos;201901&apos;;DBMS_OUTPUT.PUT_LINE(STU.SNAME||&apos;,&apos;||STU.SNO);EXCEPTIONWHEN NO_DATA_FOUND TH">
+<meta property="og:description" content="同义词(Synonym) 通过同义词可以给表、索引、视图等数据库对象创建一个别名， 来隐藏一些信息，提供一定的安全性   当DBA改变数据库对象的名称时，通过同义词可以避免前台应 用程序的改变   同义词分公有和私有，公有同义词每个用户都能使用，私有同义 词必须具有访问权限的用户才能使  格式 创建  1CREATE [OR REPLACE] [PUBLIC]SYNONYM &amp;lt;同义词名">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-28T15:10:18.207Z">
+<meta property="og:updated_time" content="2019-05-28T15:13:51.302Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Oracle数据库">
-<meta name="twitter:description" content="异常(Exception)1. SYSTEM EXCEPTION12345678910DECLARESTU STUDENT%ROWTYPE;BEGINSELECT * INTO STUFROM STUDENT WHERE SNO=&apos;201901&apos;;DBMS_OUTPUT.PUT_LINE(STU.SNAME||&apos;,&apos;||STU.SNO);EXCEPTIONWHEN NO_DATA_FOUND TH">
+<meta name="twitter:description" content="同义词(Synonym) 通过同义词可以给表、索引、视图等数据库对象创建一个别名， 来隐藏一些信息，提供一定的安全性   当DBA改变数据库对象的名称时，通过同义词可以避免前台应 用程序的改变   同义词分公有和私有，公有同义词每个用户都能使用，私有同义 词必须具有访问权限的用户才能使  格式 创建  1CREATE [OR REPLACE] [PUBLIC]SYNONYM &amp;lt;同义词名">
 
 
 
@@ -395,7 +395,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-28 23:10:18" itemprop="dateModified" datetime="2019-05-28T23:10:18+08:00">2019-05-28</time>
+                <time title="修改时间：2019-05-28 23:13:51" itemprop="dateModified" datetime="2019-05-28T23:13:51+08:00">2019-05-28</time>
               
             
           </span>
@@ -429,7 +429,18 @@
       
 
       
-        <h2 id="异常-Exception"><a href="#异常-Exception" class="headerlink" title="异常(Exception)"></a>异常(Exception)</h2><h3 id="1-SYSTEM-EXCEPTION"><a href="#1-SYSTEM-EXCEPTION" class="headerlink" title="1. SYSTEM EXCEPTION"></a>1. SYSTEM EXCEPTION</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DECLARE</span></span><br><span class="line">STU STUDENT%ROWTYPE;</span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">INTO</span> STU</span><br><span class="line"><span class="keyword">FROM</span> STUDENT <span class="keyword">WHERE</span> SNO=<span class="string">'201901'</span>;</span><br><span class="line">DBMS_OUTPUT.PUT_LINE(STU.SNAME||','||STU.SNO);</span><br><span class="line">EXCEPTION</span><br><span class="line">WHEN NO_DATA_FOUND THEN</span><br><span class="line">DBMS_OUTPUT.PUT_LINE('FUCK!');</span><br><span class="line"><span class="keyword">END</span>;</span><br></pre></td></tr></table></figure>
+        <h2 id="同义词-Synonym"><a href="#同义词-Synonym" class="headerlink" title="同义词(Synonym)"></a>同义词(Synonym)</h2><p> 通过同义词可以给表、索引、视图等数据库对象创建一个别名， 来隐藏一些信息，提供一定的安全性 </p>
+<p> 当DBA改变数据库对象的名称时，通过同义词可以避免前台应 用程序的改变 </p>
+<p> 同义词分公有和私有，公有同义词每个用户都能使用，私有同义 词必须具有访问权限的用户才能使</p>
+<hr>
+<h3 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h3><ol>
+<li>创建</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> [<span class="keyword">OR</span> <span class="keyword">REPLACE</span>] [<span class="keyword">PUBLIC</span>]<span class="keyword">SYNONYM</span> &lt;同义词名&gt; <span class="keyword">FOR</span> &lt;对象名&gt;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>删除</li>
+</ol>
+<h2 id="异常-Exception"><a href="#异常-Exception" class="headerlink" title="异常(Exception)"></a>异常(Exception)</h2><h3 id="1-SYSTEM-EXCEPTION"><a href="#1-SYSTEM-EXCEPTION" class="headerlink" title="1. SYSTEM EXCEPTION"></a>1. SYSTEM EXCEPTION</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DECLARE</span></span><br><span class="line">STU STUDENT%ROWTYPE;</span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">INTO</span> STU</span><br><span class="line"><span class="keyword">FROM</span> STUDENT <span class="keyword">WHERE</span> SNO=<span class="string">'201901'</span>;</span><br><span class="line">DBMS_OUTPUT.PUT_LINE(STU.SNAME||','||STU.SNO);</span><br><span class="line">EXCEPTION</span><br><span class="line">WHEN NO_DATA_FOUND THEN</span><br><span class="line">DBMS_OUTPUT.PUT_LINE('FUCK!');</span><br><span class="line"><span class="keyword">END</span>;</span><br></pre></td></tr></table></figure>
 <h2 id="PL-SQL"><a href="#PL-SQL" class="headerlink" title="PL_SQL"></a>PL_SQL</h2><ol>
 <li>列变量</li>
 </ol>
@@ -465,7 +476,7 @@
 <p> DDL触发器 </p>
 <p> 替代触发器 </p>
 <p> 数据库事件触发</p>
-<h3 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> [<span class="keyword">OR</span> <span class="keyword">REPLACE</span>] <span class="keyword">TRIGGER</span> 触发器名 </span><br><span class="line"></span><br><span class="line">&#123;<span class="keyword">BEFORE</span>|<span class="keyword">AFTER</span>|INSTEAD <span class="keyword">OF</span>&#125; 触发事件<span class="number">1</span> [<span class="keyword">OR</span> 触发事件<span class="number">2.</span>..]</span><br><span class="line"><span class="keyword">ON</span> 表名 <span class="comment">--为哪一张表创建触发器 </span></span><br><span class="line"><span class="keyword">WHEN</span> 触发条件 <span class="comment">--当该条件满足时，触发器才能执行 </span></span><br><span class="line">[<span class="keyword">FOR</span> <span class="keyword">EACH</span> <span class="keyword">ROW</span>] <span class="comment">--触发器为行级触发器，即对满足条件的记录触发执行一次 </span></span><br><span class="line"><span class="keyword">DECLARE</span> </span><br><span class="line">	声明部分 </span><br><span class="line"><span class="keyword">BEGIN</span> </span><br><span class="line">	主体部分 </span><br><span class="line"><span class="keyword">END</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="格式-1"><a href="#格式-1" class="headerlink" title="格式"></a>格式</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> [<span class="keyword">OR</span> <span class="keyword">REPLACE</span>] <span class="keyword">TRIGGER</span> 触发器名 </span><br><span class="line"></span><br><span class="line">&#123;<span class="keyword">BEFORE</span>|<span class="keyword">AFTER</span>|INSTEAD <span class="keyword">OF</span>&#125; 触发事件<span class="number">1</span> [<span class="keyword">OR</span> 触发事件<span class="number">2.</span>..]</span><br><span class="line"><span class="keyword">ON</span> 表名 <span class="comment">--为哪一张表创建触发器 </span></span><br><span class="line"><span class="keyword">WHEN</span> 触发条件 <span class="comment">--当该条件满足时，触发器才能执行 </span></span><br><span class="line">[<span class="keyword">FOR</span> <span class="keyword">EACH</span> <span class="keyword">ROW</span>] <span class="comment">--触发器为行级触发器，即对满足条件的记录触发执行一次 </span></span><br><span class="line"><span class="keyword">DECLARE</span> </span><br><span class="line">	声明部分 </span><br><span class="line"><span class="keyword">BEGIN</span> </span><br><span class="line">	主体部分 </span><br><span class="line"><span class="keyword">END</span>;</span><br></pre></td></tr></table></figure>
 <h2 id="存储过程-SP"><a href="#存储过程-SP" class="headerlink" title="存储过程(SP)"></a>存储过程(SP)</h2><p>存储过程和函数也是一种PL/SQL块，是存入数据库的PL/SQL块。 </p>
 <ul>
 <li>但存储过程和函数不同于已经介绍过的PL/SQL程序，我们通常把 PL/SQL程序称为无名（匿名）块，而存储过程和函数是以命名的 方式存储于数据库中的。 </li>
@@ -650,8 +661,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/05/11/kaldi安装/" rel="prev" title="kaldi安装">
-                kaldi安装 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/05/11/kaldi/" rel="prev" title="Kaldi">
+                Kaldi <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -721,7 +732,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-count">7</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -748,7 +759,7 @@
                     
                       
                     
-                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-count">4</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -799,7 +810,7 @@
                     
                       
                     
-                    <span class="site-state-item-count">17</span>
+                    <span class="site-state-item-count">15</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -852,7 +863,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#异常-Exception"><span class="nav-number">1.</span> <span class="nav-text">异常(Exception)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-SYSTEM-EXCEPTION"><span class="nav-number">1.1.</span> <span class="nav-text">1. SYSTEM EXCEPTION</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PL-SQL"><span class="nav-number">2.</span> <span class="nav-text">PL_SQL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#触发器-Trigger"><span class="nav-number">3.</span> <span class="nav-text">触发器(Trigger)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#触发器事件可分为3类："><span class="nav-number">3.1.</span> <span class="nav-text">触发器事件可分为3类：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#触发器类型可分为4类："><span class="nav-number">3.2.</span> <span class="nav-text">触发器类型可分为4类：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#格式"><span class="nav-number">3.3.</span> <span class="nav-text">格式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#存储过程-SP"><span class="nav-number">4.</span> <span class="nav-text">存储过程(SP)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#其优点如下："><span class="nav-number">4.1.</span> <span class="nav-text">其优点如下：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-创建存储过程"><span class="nav-number">4.2.</span> <span class="nav-text">1. 创建存储过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-执行存储过程"><span class="nav-number">4.3.</span> <span class="nav-text">2. 执行存储过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-EX"><span class="nav-number">4.4.</span> <span class="nav-text">3. EX</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#视图-View"><span class="nav-number">5.</span> <span class="nav-text">视图(View)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#视图定义-创建"><span class="nav-number">5.1.</span> <span class="nav-text">视图定义/创建</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#约束-Constants"><span class="nav-number">6.</span> <span class="nav-text">约束(Constants)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#关系的完整性约束"><span class="nav-number">6.1.</span> <span class="nav-text">关系的完整性约束</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-实体完整性（PRIMARY-KEY"><span class="nav-number">6.2.</span> <span class="nav-text">1. 实体完整性（PRIMARY KEY)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-参照（引用）完整性（FOREIGN-KEY）"><span class="nav-number">6.3.</span> <span class="nav-text">2. 参照（引用）完整性（FOREIGN KEY）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#索引-Index"><span class="nav-number">7.</span> <span class="nav-text">索引(Index)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-创建索引方式"><span class="nav-number">7.1.</span> <span class="nav-text">1.创建索引方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-显示创建索引的一般格式"><span class="nav-number">7.2.</span> <span class="nav-text">2. 显示创建索引的一般格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-删除索引"><span class="nav-number">7.3.</span> <span class="nav-text">3.删除索引</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#同义词-Synonym"><span class="nav-number">1.</span> <span class="nav-text">同义词(Synonym)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#格式"><span class="nav-number">1.1.</span> <span class="nav-text">格式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#异常-Exception"><span class="nav-number">2.</span> <span class="nav-text">异常(Exception)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-SYSTEM-EXCEPTION"><span class="nav-number">2.1.</span> <span class="nav-text">1. SYSTEM EXCEPTION</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PL-SQL"><span class="nav-number">3.</span> <span class="nav-text">PL_SQL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#触发器-Trigger"><span class="nav-number">4.</span> <span class="nav-text">触发器(Trigger)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#触发器事件可分为3类："><span class="nav-number">4.1.</span> <span class="nav-text">触发器事件可分为3类：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#触发器类型可分为4类："><span class="nav-number">4.2.</span> <span class="nav-text">触发器类型可分为4类：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#格式-1"><span class="nav-number">4.3.</span> <span class="nav-text">格式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#存储过程-SP"><span class="nav-number">5.</span> <span class="nav-text">存储过程(SP)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#其优点如下："><span class="nav-number">5.1.</span> <span class="nav-text">其优点如下：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-创建存储过程"><span class="nav-number">5.2.</span> <span class="nav-text">1. 创建存储过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-执行存储过程"><span class="nav-number">5.3.</span> <span class="nav-text">2. 执行存储过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-EX"><span class="nav-number">5.4.</span> <span class="nav-text">3. EX</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#视图-View"><span class="nav-number">6.</span> <span class="nav-text">视图(View)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#视图定义-创建"><span class="nav-number">6.1.</span> <span class="nav-text">视图定义/创建</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#约束-Constants"><span class="nav-number">7.</span> <span class="nav-text">约束(Constants)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#关系的完整性约束"><span class="nav-number">7.1.</span> <span class="nav-text">关系的完整性约束</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-实体完整性（PRIMARY-KEY"><span class="nav-number">7.2.</span> <span class="nav-text">1. 实体完整性（PRIMARY KEY)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-参照（引用）完整性（FOREIGN-KEY）"><span class="nav-number">7.3.</span> <span class="nav-text">2. 参照（引用）完整性（FOREIGN KEY）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#索引-Index"><span class="nav-number">8.</span> <span class="nav-text">索引(Index)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-创建索引方式"><span class="nav-number">8.1.</span> <span class="nav-text">1.创建索引方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-显示创建索引的一般格式"><span class="nav-number">8.2.</span> <span class="nav-text">2. 显示创建索引的一般格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-删除索引"><span class="nav-number">8.3.</span> <span class="nav-text">3.删除索引</span></a></li></ol></li></ol></div>
             
 
           </div>
