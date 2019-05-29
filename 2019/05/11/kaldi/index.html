@@ -491,7 +491,7 @@
 <p>另外，为最常输入的最有用的git命令设置短名称。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global alias.co checkout</span><br><span class="line">$ git config --global alias.br branch</span><br><span class="line">$ git config --global alias.st status</span><br></pre></td></tr></table></figure>
 <p>另一个非常有用的实用程序<code>git-prompts.sh</code>，一个用于Git的bash提示扩展实用程序(如果你没有它，搜索互联网如何在你的系统上安装它)。安装后，它提供了一个shell函数<code>__git_ps1</code>，当添加到提示符时，会扩展为当前分支名称和挂起的提交标记，因此您不会忘记它的位置。您可以修改<code>PS1</code>shell变量，使其包含字面意义<code>$(__git_ps1 &quot;[%s]&quot;)</code>。我在<code>~/.bashrc</code>中有这个：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">PS1=<span class="string">'\[\033[00;32m\]\u@\h\[\033[0m\]:\[\033[00;33m\]\w\[\033[01;36m\]$(__git_ps1 "[%s]")\[\033[01;33m\]\$\[\033[00m\] '</span></span><br><span class="line"><span class="built_in">export</span> GIT_PS1_SHOWDIRTYSTATE=<span class="literal">true</span> GIT_PS1_SHOWSTASHSTATE=<span class="literal">true</span></span><br><span class="line"><span class="comment"># fake __git_ps1 when git-prompts.sh not installed</span></span><br><span class="line"><span class="keyword">if</span> [ <span class="string">"<span class="variable">$(type -t __git_ps1)</span>"</span> == <span class="string">""</span> ]; <span class="keyword">then</span></span><br><span class="line">  <span class="keyword">function</span> <span class="function"><span class="title">__git_ps1</span></span>() &#123; :; &#125;</span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">PS1=<span class="string">'\[\033[00;32m\]\u@\h\[\033[0m\]:\[\033[00;33m\]\w\[\033[01;36m\]$(__git_ps1 "[%s]")\[\033[01;33m\]\$\[\033[00m\] '</span></span><br><span class="line"><span class="built_in">export</span> GIT_PS1_SHOWDIRTYSTATE=<span class="literal">true</span> GIT_PS1_SHOWSTASHSTATE=<span class="literal">true</span></span><br><span class="line"><span class="comment"># fake __git_ps1 when git-prompts.sh not installed</span></span><br><span class="line"><span class="keyword">if</span> [ <span class="string">"<span class="variable">$(type -t __git_ps1)</span>"</span> == <span class="string">""</span> ]; <span class="keyword">then</span></span><br><span class="line">  <span class="keyword">function</span> <span class="function">__git_ps1</span>() &#123; :; &#125;</span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
 <h2 id="用户工作流程"><a href="#用户工作流程" class="headerlink" title="用户工作流程"></a>用户工作流程</h2><p>使用以下命令设置存储库和工作目录：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">kkm@yupana:~$ git <span class="built_in">clone</span> https://github.com/kaldi-asr/kaldi.git --branch master --single-branch --origin golden</span><br><span class="line">Cloning into <span class="string">'kaldi'</span>...</span><br><span class="line">remote: Counting objects: 51770, <span class="keyword">done</span>.</span><br><span class="line">remote: Compressing objects: 100% (8/8), <span class="keyword">done</span>.</span><br><span class="line">remote: Total 51770 (delta 2), reused 0 (delta 0), pack-reused 51762</span><br><span class="line">Receiving objects: 100% (51770/51770), 67.72 MiB | 6.52 MiB/s, <span class="keyword">done</span>.</span><br><span class="line">Resolving deltas: 100% (41117/41117), <span class="keyword">done</span>.</span><br><span class="line">Checking connectivity... <span class="keyword">done</span>.</span><br><span class="line">kkm@yupana:~$ <span class="built_in">cd</span> kaldi/</span><br><span class="line">kkm@yupana:~/kaldi[master]$</span><br></pre></td></tr></table></figure>
 <p>现在，您已准备好配置和编译Kaldi并使用它。偶尔您需要本地分支的最新更改。这类似于你通常做的事情<code>svn update</code>。</p>
@@ -888,7 +888,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-count">8</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -904,8 +904,6 @@
                     
                   
                     
-                    
-                      
                     
                       
                     
@@ -964,9 +962,7 @@
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">15</span>
+                    <span class="site-state-item-count">16</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
