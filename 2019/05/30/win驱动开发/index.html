@@ -96,18 +96,22 @@
 
 
 
-  <meta name="description" content="Arch常备">
-<meta name="keywords" content="软件,Linux,arch">
+  <meta name="description" content="win驱动开发驱动框架 1.0.0类似C控制台的main函数,windowsDriver的入口函数是DriverEntry 具体是: 12NTSTATUS DriverEntry(IN PDRIVER_OBJECT pDriverObject,					 IN PUNICODE_STRING pRegistryPath);  那个IN是个宏,在预编译的时候就会被替换为空,只是为了让编程人员了解这是">
+<meta name="keywords" content="win驱动开发">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux好软件">
-<meta property="og:url" content="http://yoursite.com/2019/05/12/Linux好软件/index.html">
+<meta property="og:title" content="win驱动开发">
+<meta property="og:url" content="http://yoursite.com/2019/05/30/win驱动开发/index.html">
 <meta property="og:site_name" content="Xeby">
-<meta property="og:description" content="Arch常备">
+<meta property="og:description" content="win驱动开发驱动框架 1.0.0类似C控制台的main函数,windowsDriver的入口函数是DriverEntry 具体是: 12NTSTATUS DriverEntry(IN PDRIVER_OBJECT pDriverObject,					 IN PUNICODE_STRING pRegistryPath);  那个IN是个宏,在预编译的时候就会被替换为空,只是为了让编程人员了解这是">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-12T07:50:44.176Z">
+<meta property="og:image" content="https://cdn.sinaimg.cn.52ecy.cn/large/005BYqpgly1g3letphz8fj30q50i5dh9.jpg">
+<meta property="og:image" content="https://cdn.sinaimg.cn.52ecy.cn/large/005BYqpgly1g3levrd50rj30me0jfaau.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/05/30/win驱动开发/win驱动开发/001.png">
+<meta property="og:updated_time" content="2019-06-01T02:10:08.416Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linux好软件">
-<meta name="twitter:description" content="Arch常备">
+<meta name="twitter:title" content="win驱动开发">
+<meta name="twitter:description" content="win驱动开发驱动框架 1.0.0类似C控制台的main函数,windowsDriver的入口函数是DriverEntry 具体是: 12NTSTATUS DriverEntry(IN PDRIVER_OBJECT pDriverObject,					 IN PUNICODE_STRING pRegistryPath);  那个IN是个宏,在预编译的时候就会被替换为空,只是为了让编程人员了解这是">
+<meta name="twitter:image" content="https://cdn.sinaimg.cn.52ecy.cn/large/005BYqpgly1g3letphz8fj30q50i5dh9.jpg">
 
 
 
@@ -115,7 +119,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/05/12/Linux好软件/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/30/win驱动开发/">
 
 
 
@@ -125,7 +129,7 @@
   };
 </script>
 
-  <title>Linux好软件 | Xeby</title>
+  <title>win驱动开发 | Xeby</title>
   
 
 
@@ -335,7 +339,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/12/Linux好软件/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/30/win驱动开发/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Glitch">
@@ -352,7 +356,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Linux好软件
+          <h2 class="post-title" itemprop="name headline">win驱动开发
 
               
             
@@ -378,12 +382,24 @@
                 
               
 
-              <time title="创建时间：2019-05-12 15:45:19 / 修改时间：15:50:44" itemprop="dateCreated datePublished" datetime="2019-05-12T15:45:19+08:00">2019-05-12</time>
+              <time title="创建时间：2019-05-30 21:49:57" itemprop="dateCreated datePublished" datetime="2019-05-30T21:49:57+08:00">2019-05-30</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-06-01 10:10:08" itemprop="dateModified" datetime="2019-06-01T10:10:08+08:00">2019-06-01</time>
               
             
           </span>
@@ -400,7 +416,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/win/" itemprop="url" rel="index"><span itemprop="name">win</span></a></span>
 
                 
                 
@@ -435,21 +451,42 @@
       
 
       
-        <h1 id="Arch常备"><a href="#Arch常备" class="headerlink" title="Arch常备"></a>Arch常备</h1><a id="more"></a>
-<table>
-<thead>
-<tr>
-<th>分类</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>翻译</td>
-<td>omegat</td>
-</tr>
-</tbody>
-</table>
+        <h1 id="win驱动开发"><a href="#win驱动开发" class="headerlink" title="win驱动开发"></a>win驱动开发</h1><h2 id="驱动框架-1-0-0"><a href="#驱动框架-1-0-0" class="headerlink" title="驱动框架 1.0.0"></a>驱动框架 1.0.0</h2><p>类似C控制台的main函数,windowsDriver的入口函数是DriverEntry</p>
+<p>具体是:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">NTSTATUS <span class="title">DriverEntry</span><span class="params">(IN PDRIVER_OBJECT pDriverObject,</span></span></span><br><span class="line"><span class="function"><span class="params">					 IN PUNICODE_STRING pRegistryPath)</span></span>;</span><br></pre></td></tr></table></figure>
+<ol>
+<li><p>那个IN是个宏,在预编译的时候就会被替换为空,只是为了让编程人员了解这是个”传入参数”,不带出数据.</p>
+</li>
+<li><p>NSTATUS:32位无符号长整形,一般&gt;=0表示正确执行,反之异常.</p>
+</li>
+</ol>
+<h3 id="创建设备对象"><a href="#创建设备对象" class="headerlink" title="创建设备对象"></a>创建设备对象</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">NTSTATUS <span class="title">IoCreatDevice</span><span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">	IN PDRIVER_ObJECT DriverObject,<span class="comment">//驱动对象指针</span></span></span></span><br><span class="line"><span class="function"><span class="params">	IN ULONG DeviceExtensionSize,<span class="comment">//指定驱动程序为设备扩展对象而定义的结构体的大小</span></span></span></span><br><span class="line"><span class="function"><span class="params">    IN PUNICODE_STRING DeviceName OPTIONAL,<span class="comment">//设备对象名(可选的)</span></span></span></span><br><span class="line"><span class="function"><span class="params">    IN DEVICE_TYPE DeviceType,<span class="comment">//设比我类型</span></span></span></span><br><span class="line"><span class="function"><span class="params">    IN ULONG DeviceCharacteristics,<span class="comment">//设备对象的特征</span></span></span></span><br><span class="line"><span class="function"><span class="params">    IN BOOLEAN Exclusive,<span class="comment">//是否在内核下使用,一般置为TRUE</span></span></span></span><br><span class="line"><span class="function"><span class="params">    OUT PDEVICE_OBJECT *DeviceObject<span class="comment">//设备对象的地址,结构体的指针的指针</span></span></span></span><br><span class="line"><span class="function"><span class="params">)</span></span>;</span><br></pre></td></tr></table></figure>
+<ol>
+<li><p>windows数据类型中以P开头的一般表示指针类型.</p>
+</li>
+<li><p>DeviceName必须是”\Device\设备名”形式.若不指定,会自动分配一个数字</p>
+</li>
+</ol>
+<h3 id="符号链接"><a href="#符号链接" class="headerlink" title="符号链接"></a>符号链接</h3><p>创建符号链接</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">NTSTATUS <span class="title">IoCreateSymbolicLink</span><span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">	IN PUNICODE_STRING SymbolicLinkName,<span class="comment">//符号链接名</span></span></span></span><br><span class="line"><span class="function"><span class="params">    IN PUNICODE_STRING DeviceName<span class="comment">//设备名</span></span></span></span><br><span class="line"><span class="function"><span class="params">)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>通过符号链接打通内核模式和用户模式.</p>
+<h3 id="DriverUnload"><a href="#DriverUnload" class="headerlink" title="DriverUnload"></a>DriverUnload</h3><p>删除设备对象;</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">VOID <span class="title">IoDeleteDevice</span><span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">    IN PDEVICE_OBJECT DeviceObject</span></span></span><br><span class="line"><span class="function"><span class="params">)</span></span></span><br></pre></td></tr></table></figure>
+<p>删除符号链接:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">VOID <span class="title">IoDeleteSymbolicLink</span><span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">	IN PUNICODE_STRING SymbolicLinkName</span></span></span><br><span class="line"><span class="function"><span class="params">)</span></span></span><br></pre></td></tr></table></figure>
+<h2 id="在vs2017上开发win10驱动需要的一些配置更改"><a href="#在vs2017上开发win10驱动需要的一些配置更改" class="headerlink" title="在vs2017上开发win10驱动需要的一些配置更改"></a>在vs2017上开发win10驱动需要的一些配置更改</h2><ol>
+<li><p>首先当然是建立一个WDM项目</p>
+<p><img src="https://cdn.sinaimg.cn.52ecy.cn/large/005BYqpgly1g3letphz8fj30q50i5dh9.jpg" alt></p>
+</li>
+<li><p>附上我的项目结构</p>
+</li>
+</ol>
+<ol start="3">
+<li><p>更改项目属性</p>
+<p><img src="https://cdn.sinaimg.cn.52ecy.cn/large/005BYqpgly1g3levrd50rj30me0jfaau.jpg" alt></p>
+</li>
+</ol>
+<p><img src=".\win驱动开发\001.png" alt></p>
 
       
     </div>
@@ -506,11 +543,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/软件/" rel="tag"># 软件</a>
-          
-            <a href="/tags/Linux/" rel="tag"># Linux</a>
-          
-            <a href="/tags/arch/" rel="tag"># arch</a>
+            <a href="/tags/win驱动开发/" rel="tag"># win驱动开发</a>
           
         </div>
       
@@ -523,8 +556,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/12/能用上的Linux/" rel="next" title="能用上的Linux">
-                <i class="fa fa-chevron-left"></i> 能用上的Linux
+              <a href="/2019/05/29/IAR/" rel="next" title="IAR">
+                <i class="fa fa-chevron-left"></i> IAR
               </a>
             
           </div>
@@ -532,10 +565,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/05/28/VeriogHDL/" rel="prev" title="VeriogHDL">
-                VeriogHDL <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -735,7 +764,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Arch常备"><span class="nav-number">1.</span> <span class="nav-text">Arch常备</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#win驱动开发"><span class="nav-number">1.</span> <span class="nav-text">win驱动开发</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#驱动框架-1-0-0"><span class="nav-number">1.1.</span> <span class="nav-text">驱动框架 1.0.0</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建设备对象"><span class="nav-number">1.1.1.</span> <span class="nav-text">创建设备对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#符号链接"><span class="nav-number">1.1.2.</span> <span class="nav-text">符号链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DriverUnload"><span class="nav-number">1.1.3.</span> <span class="nav-text">DriverUnload</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在vs2017上开发win10驱动需要的一些配置更改"><span class="nav-number">1.2.</span> <span class="nav-text">在vs2017上开发win10驱动需要的一些配置更改</span></a></li></ol></li></ol></div>
             
 
           </div>
